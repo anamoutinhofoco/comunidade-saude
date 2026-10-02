@@ -18,8 +18,8 @@
       "icone": "i-pessoas",
       "situacao": "Aguardando validação",
       "tom": "ajuste",
-      "estado": "Sequência de outubro escrita: 9 disparos por comunidade (Médicos e Outras Especialidades), de 03 a 31/10. Canais oficiais de envio definidos. Faltam registrar a linha de base e testar o formulário de escuta.",
-      "proximo": "Hamilton (FOCO) é o responsável pelos disparos e pela automação: medir as comunidades, testar o formulário e liberar os disparos por lote.",
+      "estado": "Sequência de outubro definida: 9 disparos por comunidade (Médicos e Outras Especialidades), de 03 a 31/10, com mensagens e linha de base definidas. Canais oficiais de envio definidos. Falta testar o formulário de escuta.",
+      "proximo": "Hamilton (FOCO) é o responsável pelos disparos e pela automação: testar o formulário e liberar os disparos por lote.",
       "responsavel": "Hamilton"
     },
     {
@@ -108,8 +108,8 @@
     {
       "id": "DC-09",
       "tipo": "Bloqueador",
-      "decisao": "Registrar a linha de base atual de membros e testar o link da bio",
-      "impacto": "Os valores de julho e os status de setembro não substituem a medição de hoje; a bio precisa levar à comunidade certa antes da primeira publicação.",
+      "decisao": "Testar o link da bio (a linha de base de membros já está definida)",
+      "impacto": "A bio precisa levar à comunidade certa antes da primeira publicação.",
       "responsavel": "FOCO + HLS",
       "prazo": "2026-10-02",
       "status": "Aberta"
@@ -613,7 +613,7 @@
     {
       "id": "CK-01",
       "data": "2026-10-02",
-      "titulo": "Linha de base das comunidades",
+      "titulo": "Conferência da linha de base das comunidades",
       "verificar": "Número atual de membros, permissões, link e origem; link da bio.",
       "decisao": "Corrigir a operação antes do primeiro envio.",
       "canal": "Comunidades"
@@ -659,5 +659,5 @@
       "canal": "Comunidades"
     }
   ],
-  "geradoEm": "2026-10-02T19:03:49.475Z"
+  "geradoEm": "2026-10-02T19:09:14.324Z"
 }

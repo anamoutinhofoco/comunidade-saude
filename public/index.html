@@ -85,6 +85,7 @@
       <div class="abas" role="tablist" id="abas-painel">
         <button class="aba" role="tab" type="button" id="aba-visao-geral" data-aba="visao-geral" aria-controls="painel-visao-geral">Visão geral</button>
         <button class="aba" role="tab" type="button" id="aba-agenda" data-aba="agenda" aria-controls="painel-agenda">Agenda</button>
+        <button class="aba" role="tab" type="button" id="aba-mensagens" data-aba="mensagens" aria-controls="painel-mensagens">Disparos</button>
         <button class="aba" role="tab" type="button" id="aba-decisoes" data-aba="decisoes" aria-controls="painel-decisoes">Decisões <span class="aba__conta aba__conta--alerta" data-conta="decisoes"></span></button>
         <button class="aba" role="tab" type="button" id="aba-diagnostico" data-aba="diagnostico" aria-controls="painel-diagnostico">Diagnóstico</button>
         <button class="aba" role="tab" type="button" id="aba-operacao" data-aba="operacao" aria-controls="painel-operacao">Operação</button>
@@ -125,6 +126,17 @@
         </div>
       </div>
       <div class="cal" id="agenda"></div>
+    </section>
+
+    <section class="painel-aba" role="tabpanel" id="painel-mensagens" aria-labelledby="aba-mensagens" hidden>
+      <div class="secao__cabeca">
+        <div>
+          <span class="rotulo">disparos</span>
+          <h2 class="f-titulo-2">Disparos das comunidades de WhatsApp</h2>
+          <p class="f-legenda">Boas-vindas e disparos de outubro, com as versões M (Médicos) e O (Outras Especialidades). Os mesmos disparos aparecem na Agenda, nas datas de envio.</p>
+        </div>
+      </div>
+      <div id="lista-mensagens"></div>
     </section>
 
     <section class="painel-aba" role="tabpanel" id="painel-decisoes" aria-labelledby="aba-decisoes" hidden>

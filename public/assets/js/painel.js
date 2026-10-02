@@ -159,7 +159,7 @@ function renderOperacao() {
 }
 
 // ---------- Abas ----------
-const NOMES_ABAS = ['visao-geral', 'agenda', 'decisoes', 'diagnostico', 'operacao'];
+const NOMES_ABAS = ['visao-geral', 'agenda', 'mensagens', 'decisoes', 'diagnostico', 'operacao'];
 
 function trocarAba(nome, { foco = false } = {}) {
   if (!NOMES_ABAS.includes(nome)) nome = 'visao-geral';
@@ -561,6 +561,38 @@ dialogoAg.addEventListener('click', async (e) => {
   catch { toast('Não foi possível copiar — selecione o texto manualmente'); }
 });
 
+// ---------- Mensagens ----------
+function renderMensagens() {
+  const boasVindas = (D.boasVindas ?? []).map((b) => `
+    <article class="cartao">
+      <span class="fase">${esc(b.publico)} · enviada na entrada de cada membro</span>
+      <h3 class="f-titulo-3" style="margin: 4px 0 12px">${esc(b.codigo)} · Boas-vindas</h3>
+      ${blocoCopia('Mensagem', b.copy, `msg:${b.codigo}`)}
+    </article>`).join('');
+  const disparos = D.disparos.map((x) => {
+    const d = paraData(x.data);
+    return `<article class="cartao">
+      <span class="fase">${DIAS_LONGOS[d.getDay()]}, ${ddmm(x.data)}${x.hora ? ` · ${esc(x.hora)}` : ''} · ${esc(x.etapa)}</span>
+      <h3 class="f-titulo-3" style="margin: 4px 0 8px">${esc(x.codigo)} · ${esc(x.tema)}</h3>
+      <dl class="detalhe__dados dialogo__dados">${campo('Objetivo', x.objetivo)}${campo('CTA', x.cta)}${campo('Formato', x.formato)}${campo('Execução', x.execucao)}${campo('Status', x.aprovacao)}</dl>
+      <div class="grade grade--2" style="margin-top: 12px">
+        ${blocoCopia('Versão M · Médicos', x.medicos, `msg:${x.codigo}:m`)}
+        ${blocoCopia('Versão O · Outras Especialidades', x.outras, `msg:${x.codigo}:o`)}
+      </div>
+      ${x.alternativa ? `<div class="aviso aviso--atencao" style="margin-top: 12px">${icone('i-alerta')}<div><strong>Alternativa sem link validado</strong>${comMarcadores(x.alternativa)}</div></div>` : ''}
+    </article>`;
+  }).join('');
+  $('#lista-mensagens').innerHTML = `
+    <div class="secao"><div class="secao__cabeca"><div><span class="rotulo">entrada</span><h3 class="f-titulo-3">Boas-vindas</h3></div></div><div class="grade grade--2">${boasVindas}</div></div>
+    <div class="secao"><div class="secao__cabeca"><div><span class="rotulo">outubro</span><h3 class="f-titulo-3">Disparos (${D.disparos.length})</h3></div></div><div style="display: grid; gap: 16px">${disparos}</div></div>`;
+}
+$('#lista-mensagens').addEventListener('click', async (e) => {
+  const c = e.target.closest('[data-copia]');
+  if (!c) return;
+  try { await navigator.clipboard.writeText(copias.get(c.dataset.copia)); toast('Texto copiado'); }
+  catch { toast('Não foi possível copiar — selecione o texto manualmente'); }
+});
+
 // ---------- Montagem ----------
 renderCabecalho();
 renderFunil();
@@ -569,6 +601,7 @@ renderDecisoes();
 renderDiagnostico();
 renderOperacao();
 renderAgenda();
+renderMensagens();
 atualizarContadores();
 
 $('#rodape-fonte').textContent = `Atualizado em ${D.atualizadoEm.split('-').reverse().join('/')} · dados/hls.json`;
