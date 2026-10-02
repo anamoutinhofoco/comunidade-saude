@@ -2,12 +2,11 @@
   "cliente": "HLS",
   "projeto": "HLS — business club de saúde (FOCO › Comunidade Saúde)",
   "atualizadoEm": "2026-10-02",
-  "resumo": "Business club premium para donos de clínicas, médicos e gestores da saúde. A operação conecta aquisição, comunidade, Lives, conteúdo e conversão.",
+  "resumo": "Business club premium para donos de clínicas, médicos e gestores da saúde. A operação conecta aquisição, comunidade, conteúdo e conversão.",
   "funil": [
     "Aquisição",
     "Entrada na comunidade",
     "Aquecimento",
-    "Live",
     "CTA",
     "Venda",
     "Follow-up"
@@ -21,15 +20,6 @@
       "tom": "ajuste",
       "estado": "Sequência de outubro escrita: 9 disparos por comunidade (Médicos e Outras Especialidades), de 03 a 31/10. Não está pronta para agendar até haver publicador, aprovação HLS, linha de base e links testados.",
       "proximo": "Nomear publicador e aprovador, medir as comunidades, testar página de entrada e formulário e liberar os disparos por lote."
-    },
-    {
-      "id": "lives",
-      "nome": "Lives",
-      "icone": "i-video",
-      "situacao": "Em andamento",
-      "tom": "revisao",
-      "estado": "Peça central para relacionamento e venda. Live de 24/08 e Live conjunta de 23/09, às 19h. Nenhuma Live está confirmada para outubro.",
-      "proximo": "Tratar cada Live como projeto: objetivo, divulgação antecipada, tráfego, base, calendário e conversão. Todo encontro vira matéria-prima de conteúdo."
     },
     {
       "id": "instagram",
@@ -46,7 +36,7 @@
       "icone": "i-conversa",
       "situacao": "Prioridade",
       "tom": "atrasado",
-      "estado": "Frente de networking tratada como urgente, com mensagens solicitadas e prazo em 08/09/2026.",
+      "estado": "Frente de networking tratada como urgente, com mensagens solicitadas.",
       "proximo": "Mostrar valor em conexões, acesso, relacionamento e oportunidades entre profissionais da saúde, não só em conteúdo."
     },
     {
@@ -56,7 +46,7 @@
       "situacao": "A validar",
       "tom": "neutro",
       "estado": "Em outubro a aquisição é orgânica: Instagram, WhatsApp e indicação entre pares, sem mídia paga. Falta validar a página de entrada e a origem das entradas.",
-      "proximo": "Validar volume de tráfego e usar eventos presenciais e palestras como porta de entrada da comunidade."
+      "proximo": "Validar volume de tráfego e acompanhar a origem das entradas."
     },
     {
       "id": "identidade",
@@ -77,63 +67,12 @@
       "proximo": "Definir esse responsável. Sem a visão de vendas, repensar o papel da parceria: HLS como ecossistema educacional, com parceiros e patrocínios."
     }
   ],
-  "marcos": [
-    {
-      "id": "MK-01",
-      "data": "2026-08-24",
-      "hora": null,
-      "frente": "Lives",
-      "titulo": "Live do dia 24 (não é uma Live de 24 horas)",
-      "detalhe": "Havia dúvida entre manter ou adiar, porque a comunicação anterior estava fraca e podia não gerar público. A recomendação foi avaliar objetivo, divulgação, tráfego, base, calendário e capacidade de conversão.",
-      "responsavel": "HLS + FOCO",
-      "status": "A confirmar"
-    },
-    {
-      "id": "MK-02",
-      "data": "2026-08-31",
-      "hora": null,
-      "frente": "Instagram",
-      "titulo": "Conteúdo de Instagram da HLS (leva de agosto)",
-      "detalhe": "Prazo registrado no projeto. Em 22/09 ainda havia conteúdo aguardando aprovação.",
-      "responsavel": "FOCO › Comunidade Saúde",
-      "status": "Aguardando aprovação"
-    },
-    {
-      "id": "MK-03",
-      "data": "2026-09-08",
-      "hora": null,
-      "frente": "Network Doctors",
-      "titulo": "Mensagens do “Poder do Network Doctors”",
-      "detalhe": "Solicitadas como tarefa urgente.",
-      "responsavel": "FOCO",
-      "status": "A confirmar"
-    },
-    {
-      "id": "MK-04",
-      "data": "2026-09-23",
-      "hora": "19:00",
-      "frente": "Lives",
-      "titulo": "Live conjunta com o Dr. Ivan",
-      "detalhe": "Live feita em conjunto. O Dr. Ivan é um projeto separado, com outra comunidade e base própria; a comunicação para a base dele não faz parte da HLS.",
-      "responsavel": "HLS + FOCO",
-      "status": "Realizado"
-    }
-  ],
   "decisoes": [
     {
       "id": "DC-01",
       "tipo": "Operação",
       "decisao": "Quem, do lado da HLS, fornece os insumos e aprova as comunicações",
-      "impacto": "Sem um responsável único, conteúdos acumulam em aprovação e Lives chegam ao time em cima da hora.",
-      "responsavel": "HLS",
-      "prazo": null,
-      "status": "Aberta"
-    },
-    {
-      "id": "DC-02",
-      "tipo": "Operação",
-      "decisao": "Calendário mensal de eventos, palestras, pitches, fotos e vídeos, com revisão quinzenal",
-      "impacto": "É o que tira a comunicação do modo reativo e permite divulgar Lives e eventos com antecedência.",
+      "impacto": "Sem um responsável único, conteúdos acumulam em aprovação.",
       "responsavel": "HLS",
       "prazo": null,
       "status": "Aberta"
@@ -142,7 +81,7 @@
       "id": "DC-03",
       "tipo": "Operação",
       "decisao": "Prazo mínimo para a HLS enviar materiais e pasta central de ativos",
-      "impacto": "Evita que eventos e Lives cheguem ao time no último momento.",
+      "impacto": "Evita que materiais cheguem ao time no último momento.",
       "responsavel": "HLS + FOCO",
       "prazo": null,
       "status": "Aberta"
@@ -151,7 +90,7 @@
       "id": "DC-04",
       "tipo": "Monetização",
       "decisao": "Responsável do lado parceiro por informar produtos promovidos e vendas geradas",
-      "impacto": "Sem esse dado não é possível medir se comunidade, Lives e conteúdo geram negócio.",
+      "impacto": "Sem esse dado não é possível medir se comunidade e conteúdo geram negócio.",
       "responsavel": "Parceiro",
       "prazo": null,
       "status": "Aberta"
@@ -255,11 +194,6 @@
       "acao": "Administração centralizada; reações e enquetes como mecanismos de interação"
     },
     {
-      "frente": "Lives",
-      "diagnostico": "Divulgação muitas vezes próxima demais da data",
-      "acao": "Calendário real de eventos e plano de divulgação antecipado"
-    },
-    {
       "frente": "Conteúdo",
       "diagnostico": "Risco de funcionar de forma isolada e reativa",
       "acao": "Conteúdo guiado por calendário e prioridades comerciais"
@@ -267,7 +201,7 @@
     {
       "frente": "Insumos",
       "diagnostico": "Falta de calendário e de materiais antecipados",
-      "acao": "Cronograma mensal de eventos e pasta central de ativos"
+      "acao": "Pasta central de ativos e prazo mínimo para envio de materiais"
     },
     {
       "frente": "Aprovação",
@@ -299,7 +233,7 @@
     "fluxo": [
       {
         "etapa": "Insumos",
-        "texto": "HLS envia calendário de eventos, materiais, fotos e vídeos dentro do prazo mínimo."
+        "texto": "HLS envia materiais, fotos e vídeos dentro do prazo mínimo."
       },
       {
         "etapa": "Planejamento",
@@ -329,15 +263,11 @@
       },
       {
         "tema": "Antecedência",
-        "orientacao": "Existe um prazo mínimo para envio de materiais; Lives e eventos não entram em cima da hora."
-      },
-      {
-        "tema": "Reaproveitamento",
-        "orientacao": "Cada Live deve virar matéria-prima de conteúdo para as redes sociais."
+        "orientacao": "Existe um prazo mínimo para envio de materiais; nada entra em cima da hora."
       },
       {
         "tema": "Projetos separados",
-        "orientacao": "Dr. Ivan é outro projeto, com outra comunidade, base e produto. Nada dele entra no painel, nas comunidades ou nos disparos da HLS; ações conjuntas, como a Live, são tratadas como pontuais."
+        "orientacao": "Dr. Ivan é outro projeto, com outra comunidade, base e produto. Nada dele entra no painel, nas comunidades ou nos disparos da HLS."
       }
     ]
   },

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Painel HLS</title>
-<meta name="description" content="Painel de status da operação HLS — business club de saúde: frentes, marcos, decisões em aberto e operação.">
+<meta name="description" content="Painel de status da operação HLS — business club de saúde: frentes, decisões em aberto e operação.">
 <link rel="icon" type="image/png" href="/assets/img/foco-simbolo-navy.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,7 +85,6 @@
       <div class="abas" role="tablist" id="abas-painel">
         <button class="aba" role="tab" type="button" id="aba-visao-geral" data-aba="visao-geral" aria-controls="painel-visao-geral">Visão geral</button>
         <button class="aba" role="tab" type="button" id="aba-agenda" data-aba="agenda" aria-controls="painel-agenda">Agenda</button>
-        <button class="aba" role="tab" type="button" id="aba-marcos" data-aba="marcos" aria-controls="painel-marcos">Marcos <span class="aba__conta" data-conta="marcos"></span></button>
         <button class="aba" role="tab" type="button" id="aba-decisoes" data-aba="decisoes" aria-controls="painel-decisoes">Decisões <span class="aba__conta aba__conta--alerta" data-conta="decisoes"></span></button>
         <button class="aba" role="tab" type="button" id="aba-diagnostico" data-aba="diagnostico" aria-controls="painel-diagnostico">Diagnóstico</button>
         <button class="aba" role="tab" type="button" id="aba-operacao" data-aba="operacao" aria-controls="painel-operacao">Operação</button>
@@ -115,10 +114,6 @@
         <div class="grade grade--3" id="frentes"></div>
       </div>
 
-      <div class="secao">
-        <div class="secao__cabeca"><div><span class="rotulo">marcos</span><h2 class="f-titulo-2">Últimos e próximos marcos</h2></div></div>
-        <div class="cartao"><ul class="agenda" id="linha-marcos"></ul></div>
-      </div>
     </section>
 
     <section class="painel-aba" role="tabpanel" id="painel-agenda" aria-labelledby="aba-agenda" hidden>
@@ -126,21 +121,10 @@
         <div>
           <span class="rotulo">agenda</span>
           <h2 class="f-titulo-2">O que fazer no dia e na semana</h2>
-          <p class="f-legenda">Publicações do feed, disparos de WhatsApp, checkpoints, marcos e decisões com prazo. Escolha dia, semana ou mês e clique em uma atividade para ver a legenda, as mensagens prontas e o material.</p>
+          <p class="f-legenda">Publicações do feed, disparos de WhatsApp, checkpoints e decisões com prazo. Escolha dia, semana ou mês e clique em uma atividade para ver a legenda, as mensagens prontas e o material.</p>
         </div>
       </div>
       <div class="cal" id="agenda"></div>
-    </section>
-
-    <section class="painel-aba" role="tabpanel" id="painel-marcos" aria-labelledby="aba-marcos" hidden>
-      <div class="secao__cabeca">
-        <div>
-          <span class="rotulo">marcos</span>
-          <h2 class="f-titulo-2">Lives, prazos e entregas com data</h2>
-          <p class="f-legenda">Marcos marcados como “A confirmar” não tiveram o resultado registrado no acompanhamento; confirme o status para o painel refletir a realidade.</p>
-        </div>
-      </div>
-      <div id="tabela-marcos"></div>
     </section>
 
     <section class="painel-aba" role="tabpanel" id="painel-decisoes" aria-labelledby="aba-decisoes" hidden>
@@ -159,7 +143,7 @@
         <div>
           <span class="rotulo">diagnóstico</span>
           <h2 class="f-titulo-2">Problemas identificados e resposta</h2>
-          <p class="f-legenda">A operação evoluiu de “comunidades, automação e Lives” para um ecossistema empresarial. O gargalo é ligar HLS → FOCO → comunidade → conteúdo → evento → oferta → venda.</p>
+          <p class="f-legenda">A operação evoluiu para um ecossistema empresarial. O gargalo é ligar HLS → FOCO → comunidade → conteúdo → oferta → venda.</p>
         </div>
       </div>
       <div id="tabela-diagnostico"></div>

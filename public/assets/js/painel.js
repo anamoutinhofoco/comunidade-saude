@@ -67,7 +67,6 @@ try {
   throw erro;
 }
 
-const marcos = D.marcos.map((m) => ({ ...m, st: status(m.status, m.data) }));
 const decisoes = D.decisoes.map((d) => {
   const resolvida = status(d.status).grupo === 'concluido';
   const dias = d.prazo ? diasEntre(HOJE, d.prazo) : null;
@@ -90,15 +89,12 @@ function rotularCelulas(raiz) {
 
 // ---------- Cabeçalho ----------
 function renderCabecalho() {
-  const aConfirmar = marcos.filter((m) => m.st.grupo === 'confirmar').length;
-  const pendentes = marcos.filter((m) => ['andamento', 'atrasado'].includes(m.st.grupo)).length;
   $('#hoje-rotulo').textContent = `Hoje: ${dataLonga(HOJE)}`;
   $('#cabecalho-sub').textContent = D.resumo;
   const n = (valor, rotulo, extra = '') => `<div class="cabecalho__numero${extra}"><b>${valor}</b><span>${rotulo}</span></div>`;
   $('#cabecalho-numeros').innerHTML =
     n(D.frentes.length, 'frentes acompanhadas') +
     n(D.publicacoes.length + D.disparos.length, 'publicações e disparos em outubro') +
-    n(aConfirmar + pendentes, 'marcos para confirmar ou aprovar', aConfirmar + pendentes ? ' cabecalho__numero--alerta' : '') +
     n(abertas.length, 'decisões em aberto');
 }
 
@@ -117,25 +113,6 @@ function renderFrentes() {
       <div class="frente__bloco"><b>Situação</b><span>${esc(f.estado)}</span></div>
       <div class="frente__bloco"><b>Próximo passo</b><span>${esc(f.proximo)}</span></div>
     </article>`).join('');
-}
-
-function renderLinhaMarcos() {
-  $('#linha-marcos').innerHTML = marcos.map((m) => {
-    const d = paraData(m.data);
-    return `<li class="agenda__item${m.data < HOJE ? ' agenda__item--passou' : ''}">
-      <span class="agenda__data${m.data === HOJE ? ' agenda__data--hoje' : ''}"><b>${d.getDate()}</b><span>${MESES[d.getMonth()]}</span></span>
-      <span class="agenda__corpo"><span class="fase">${esc(m.frente)}</span><span class="agenda__titulo">${esc(m.titulo)}</span><span class="agenda__sub">${m.hora ? esc(m.hora) + ' · ' : ''}${esc(m.responsavel)}</span></span>
-      <span>${tagStatus(m.st)}</span>
-    </li>`;
-  }).join('');
-}
-
-// ---------- Marcos ----------
-function renderMarcos() {
-  const alvo = $('#tabela-marcos');
-  alvo.innerHTML = tabela(['Data', 'Frente', 'Marco', 'Responsável', 'Status'], marcos.map((m) =>
-    `<tr><td class="col-data">${ddmm(m.data)}${m.hora ? `<span class="col-sub">${esc(m.hora)}</span>` : ''}</td><td>${esc(m.frente)}</td><td class="col-tema">${esc(m.titulo)}<span class="col-sub">${esc(m.detalhe)}</span></td><td>${esc(m.responsavel)}</td><td>${tagStatus(m.st)}</td></tr>`).join(''));
-  rotularCelulas(alvo);
 }
 
 // ---------- Decisões ----------
@@ -181,7 +158,7 @@ function renderOperacao() {
 }
 
 // ---------- Abas ----------
-const NOMES_ABAS = ['visao-geral', 'agenda', 'marcos', 'decisoes', 'diagnostico', 'operacao'];
+const NOMES_ABAS = ['visao-geral', 'agenda', 'decisoes', 'diagnostico', 'operacao'];
 
 function trocarAba(nome, { foco = false } = {}) {
   if (!NOMES_ABAS.includes(nome)) nome = 'visao-geral';
@@ -197,7 +174,6 @@ function trocarAba(nome, { foco = false } = {}) {
 
 function atualizarContadores() {
   const conta = {
-    marcos: marcos.filter((m) => ['confirmar', 'andamento', 'atrasado'].includes(m.st.grupo)).length,
     decisoes: abertas.length,
   };
   document.querySelectorAll('[data-conta]').forEach((el) => {
@@ -229,7 +205,6 @@ const CATS_AG = [
   ['instagram', 'Instagram · Feed'],
   ['whatsapp', 'WhatsApp · Disparos'],
   ['checkpoint', 'Checkpoints de métricas'],
-  ['marco', 'Marcos e Lives'],
   ['decisao', 'Decisões com prazo'],
 ];
 const ROTULO_CAT = Object.fromEntries(CATS_AG);
@@ -259,9 +234,6 @@ const eventosAgenda = (() => {
   }
   for (const c of D.checkpoints) {
     lista.push({ id: `ck:${c.id}`, cat: 'checkpoint', data: c.data, codigo: c.id, titulo: c.titulo, item: c, st: status(c.status ?? 'A fazer', c.data) });
-  }
-  for (const m of marcos) {
-    lista.push({ id: `mk:${m.id}`, cat: 'marco', data: m.data, hora: m.hora, codigo: m.id, titulo: m.titulo, item: m, st: m.st });
   }
   for (const p of decisoes) {
     if (!p.prazo) continue;
@@ -353,7 +325,6 @@ function resumoAgenda() {
     [n('instagram'), 'publicação no feed', 'publicações no feed'],
     [n('whatsapp'), 'disparo', 'disparos'],
     [n('checkpoint'), 'checkpoint', 'checkpoints'],
-    [n('marco'), 'marco', 'marcos'],
     [n('decisao'), 'decisão', 'decisões'],
   ].filter(([q]) => q).map(([q, a, b]) => plural(q, a, b));
   const atrasados = evs.filter((e) => e.st.grupo === 'atrasado').length;
@@ -423,7 +394,6 @@ function subPauta(e) {
   if (e.cat === 'instagram') return `${esc(x.formato)} · ${esc(x.tema)}<br>CTA: <b>${esc(x.cta)}</b>`;
   if (e.cat === 'whatsapp') return `${esc(x.etapa)} · Médicos e Outras Especialidades · ${esc(x.formato)}<br>CTA: <b>${esc(x.cta)}</b> · Aprovação: ${esc(x.aprovacao)}`;
   if (e.cat === 'checkpoint') return `${esc(x.verificar)}<br>Se abaixo do esperado: ${esc(x.decisao)}`;
-  if (e.cat === 'marco') return `${esc(x.detalhe)} · ${esc(x.responsavel)}`;
   return `${esc(x.impacto)}<br>${esc(x.tipo)} · ${esc(x.responsavel)}`;
 }
 function cartaoPauta(e) {
@@ -444,7 +414,7 @@ function htmlDia() {
   const grupos = [
     ['Instagram', (e) => e.cat === 'instagram'],
     ['Disparos de WhatsApp', (e) => e.cat === 'whatsapp'],
-    ['Checkpoints e marcos', (e) => e.cat === 'checkpoint' || e.cat === 'marco'],
+    ['Checkpoints', (e) => e.cat === 'checkpoint'],
     ['Decisões com prazo', (e) => e.cat === 'decisao'],
   ];
   return `<div class="pauta-dia">${grupos.map(([nome, f]) => {
@@ -531,8 +501,6 @@ function htmlEvento(e) {
       ${/\[LINK/.test(x.medicos + x.outras) ? `<div class="aviso">${icone('i-info')}<div><strong>Campos entre colchetes</strong>Os trechos entre colchetes só são enviados depois que o link for substituído e testado.</div></div>` : ''}`;
   } else if (e.cat === 'checkpoint') {
     corpo = `<dl class="detalhe__dados dialogo__dados">${campo('Canal', x.canal)}${campo('O que verificar', x.verificar)}${campo('Se abaixo do esperado', x.decisao)}</dl>`;
-  } else if (e.cat === 'marco') {
-    corpo = `<dl class="detalhe__dados dialogo__dados">${campo('Frente', x.frente)}${campo('Detalhe', x.detalhe)}${campo('Responsável', x.responsavel)}</dl>`;
   } else {
     corpo = `<dl class="detalhe__dados dialogo__dados">${campo('Tipo', x.tipo)}${campo('Decisão necessária', x.decisao)}${campo('Impacto', x.impacto)}${campo('Responsável', x.responsavel)}${campo('Prazo', ddmm(x.prazo))}</dl>`;
   }
@@ -596,8 +564,6 @@ dialogoAg.addEventListener('click', async (e) => {
 renderCabecalho();
 renderFunil();
 renderFrentes();
-renderLinhaMarcos();
-renderMarcos();
 renderDecisoes();
 renderDiagnostico();
 renderOperacao();
