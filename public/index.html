@@ -37,6 +37,7 @@
   <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
   <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
   <symbol id="i-imagem" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 15.5l-4.5-4.5-9 8.5"/></symbol>
+  <symbol id="i-audio" viewBox="0 0 24 24"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M8.5 21h7"/></symbol>
   <symbol id="i-video" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M10 9l5 3-5 3z"/></symbol>
   <symbol id="i-carrossel" viewBox="0 0 24 24"><rect x="6.5" y="4.5" width="11" height="15" rx="2"/><path d="M3 7v10M21 7v10"/></symbol>
   <symbol id="i-copiar" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2"/><path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></symbol>
@@ -86,7 +87,7 @@
         <button class="aba" role="tab" type="button" id="aba-visao-geral" data-aba="visao-geral" aria-controls="painel-visao-geral">Visão geral</button>
         <button class="aba" role="tab" type="button" id="aba-agenda" data-aba="agenda" aria-controls="painel-agenda">Agenda</button>
         <button class="aba" role="tab" type="button" id="aba-mensagens" data-aba="mensagens" aria-controls="painel-mensagens">Disparos</button>
-        <button class="aba" role="tab" type="button" id="aba-roteiros" data-aba="roteiros" aria-controls="painel-roteiros">Roteiros</button>
+        <button class="aba" role="tab" type="button" id="aba-criativos" data-aba="criativos" aria-controls="painel-criativos">Criativos</button>
         <button class="aba" role="tab" type="button" id="aba-decisoes" data-aba="decisoes" aria-controls="painel-decisoes">Decisões <span class="aba__conta aba__conta--alerta" data-conta="decisoes"></span></button>
         <button class="aba" role="tab" type="button" id="aba-operacao" data-aba="operacao" aria-controls="painel-operacao">Operação</button>
       </div>
@@ -139,15 +140,15 @@
       <div id="lista-mensagens"></div>
     </section>
 
-    <section class="painel-aba" role="tabpanel" id="painel-roteiros" aria-labelledby="aba-roteiros" hidden>
+    <section class="painel-aba" role="tabpanel" id="painel-criativos" aria-labelledby="aba-criativos" hidden>
       <div class="secao__cabeca">
         <div>
-          <span class="rotulo">roteiros</span>
-          <h2 class="f-titulo-2">Gravações opcionais de outubro</h2>
-          <p class="f-legenda">Tudo o que será solicitado para gravação: roteiro final para leitura, orientação de captação, capa, legenda e texto de apoio no WhatsApp. HLS grava e envia; FOCO edita e agenda. Horários sugeridos, no fuso de Brasília.</p>
+          <span class="rotulo">criativos</span>
+          <h2 class="f-titulo-2">Estáticos, vídeos e áudios de outubro</h2>
+          <p class="f-legenda">Estáticos e carrosséis do feed, e o que será solicitado para gravação (vídeos e áudios): roteiro final para leitura, orientação de captação, capa, legenda e texto de apoio no WhatsApp. HLS grava e envia; FOCO edita e agenda. Horários sugeridos, no fuso de Brasília.</p>
         </div>
       </div>
-      <div id="lista-roteiros"></div>
+      <div id="lista-criativos"></div>
     </section>
 
     <section class="painel-aba" role="tabpanel" id="painel-decisoes" aria-labelledby="aba-decisoes" hidden>

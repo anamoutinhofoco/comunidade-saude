@@ -151,7 +151,7 @@ function renderOperacao() {
 }
 
 // ---------- Abas ----------
-const NOMES_ABAS = ['visao-geral', 'agenda', 'mensagens', 'roteiros', 'decisoes', 'operacao'];
+const NOMES_ABAS = ['visao-geral', 'agenda', 'mensagens', 'criativos', 'decisoes', 'operacao'];
 
 function trocarAba(nome, { foco = false } = {}) {
   if (!NOMES_ABAS.includes(nome)) nome = 'visao-geral';
@@ -593,19 +593,16 @@ function renderMensagens() {
     <div class="secao"><div class="secao__cabeca"><div><span class="rotulo">outubro</span><h3 class="f-titulo-3">Disparos (${D.disparos.length})</h3></div></div><div style="display: grid; gap: 16px">${disparos}</div></div>
     ${resultados}`;
 }
-// ---------- Roteiros ----------
+// ---------- Criativos ----------
 const dh = (v) => (v ? `${v.slice(8, 10)}/${v.slice(5, 7)} · ${v.slice(11)}` : '—');
-function renderRoteiros() {
-  const R = D.roteiros;
-  const O = R.orientacoes;
-  const orient = `<article class="cartao" style="display: grid; gap: 12px">
-    <h3 class="f-titulo-3">Como pedir e receber</h3>
-    <p class="f-corpo">${esc(O.lotes)}</p>
-    <ul class="lista-seta">${[...O.captacao, O.prioridade, O.encaixe].map((t) => `<li>${icone('i-check')}<span>${esc(t)}</span></li>`).join('')}</ul>
-  </article>`;
-  const tempo = (v) => v ? `<div><dt>${v[0]}</dt><dd>${esc(v[1])}</dd></div>` : '';
-  const cards = R.itens.map((g) => {
-    const texto = g.roteiro.join('\n\n');
+const cr = { sub: 'estaticos' };
+const eAudio = (g) => /^áudio/i.test(g.formato);
+const subCriativos = () => [
+  ['estaticos', 'Estáticos e carrosséis', 'i-imagem', D.publicacoes.length],
+  ['videos', 'Vídeos para gravar', 'i-video', D.roteiros.itens.filter((g) => !eAudio(g)).length],
+  ['audios', 'Áudios para gravar', 'i-audio', D.roteiros.itens.filter(eAudio).length],
+];
+function cartaoGravacao(g) {
     return `<article class="cartao" style="display: grid; gap: 14px">
       <div><span class="fase">${esc(g.id)} · ${esc(g.quem)} · ${esc(g.formato)} · Prioridade ${g.prioridade}</span>
       <h3 class="f-titulo-3" style="margin-top: 4px">${esc(g.titulo)}</h3>
@@ -622,15 +619,48 @@ function renderRoteiros() {
       </div>
       <dl class="detalhe__dados">${campo('Uso e reaproveitamento', g.uso)}</dl>
     </article>`;
-  }).join('');
+}
+function cartaoEstatico(x) {
+  const d = paraData(x.data);
+  copias.set(`est:${x.id}`, x.legenda);
+  return `<article class="cartao" style="display: grid; gap: 14px">
+    <div><span class="fase">${esc(x.id)} · ${esc(x.formato)} · ${DIAS_LONGOS[d.getDay()]}, ${ddmm(x.data)} · ${esc(x.hora)} · ${esc(x.situacao)}</span>
+    <h3 class="f-titulo-3" style="margin-top: 4px">${esc(x.titulo)}</h3>
+    <p class="f-legenda" style="margin-top: 4px">${esc(x.funcao ?? x.tema)}</p></div>
+    <dl class="detalhe__dados dialogo__dados">${campo('CTA principal', x.cta)}${campo('Texto na arte', x.textoArte)}${campo('Apoio pequeno', x.apoio)}${campo('Visual', x.visual)}${campo('Método', x.framework)}</dl>
+    ${x.laminas ? `<div><span class="fase">Texto exato das lâminas</span><ol class="numerada" style="margin-top: 8px">${x.laminas.map((l) => `<li><span>${esc(l)}</span></li>`).join('')}</ol></div>` : ''}
+    ${x.legenda ? blocoCopia('Legenda pronta', x.legenda, `est:${x.id}`) : ''}
+  </article>`;
+}
+function renderCriativos() {
+  const R = D.roteiros;
+  const O = R.orientacoes;
+  const orient = `<article class="cartao" style="display: grid; gap: 12px">
+    <h3 class="f-titulo-3">Como pedir e receber</h3>
+    <p class="f-corpo">${esc(O.lotes)}</p>
+    <ul class="lista-seta">${[...O.captacao, O.prioridade, O.encaixe].map((t) => `<li>${icone('i-check')}<span>${esc(t)}</span></li>`).join('')}</ul>
+  </article>`;
   const apoio = `<div class="secao"><div class="secao__cabeca"><div><span class="rotulo">apoio</span><h3 class="f-titulo-3">Imagens e materiais de apoio</h3><p class="f-legenda">Pedidos opcionais que acompanham as gravações. Nenhum deles atrasa uma peça: cada um tem alternativa.</p></div></div>
     <div class="grade grade--3">${R.apoio.map((m) => `<article class="cartao" style="display: grid; gap: 8px"><span class="fase">${esc(m.id)}</span><h4 class="f-titulo-3">${esc(m.titulo)}</h4><p class="f-corpo">${esc(m.instrucao)}</p><p class="f-legenda"><b>Alternativa:</b> ${esc(m.alternativa)}</p></article>`).join('')}</div>
     <div class="aviso">${icone('i-info')}<div><strong>Modelo de tabela para G06, preparado pela FOCO</strong>${esc(O.modeloTabela)}</div></div></div>`;
-  $('#lista-roteiros').innerHTML = `<div style="display: grid; gap: 24px">${orient}
-    <div class="secao"><div class="secao__cabeca"><div><span class="rotulo">gravações</span><h3 class="f-titulo-3">Roteiros (${R.itens.length})</h3></div></div><div style="display: grid; gap: 16px">${cards}</div></div>
-    ${apoio}</div>`;
+  const subs = subCriativos();
+  const barra = `<div class="segmento" role="group" aria-label="Tipo de criativo">${subs.map(([v, r, ic, n]) =>
+    `<button type="button" class="segmento__btn" data-cr-sub="${v}" aria-pressed="${cr.sub === v}">${icone(ic)}${r} <span>${n}</span></button>`).join('')}</div>`;
+  const lista = (itens, titulo) => `<div class="secao"><div class="secao__cabeca"><div><span class="rotulo">${titulo}</span><h3 class="f-titulo-3">${itens.length} ${titulo}</h3></div></div><div style="display: grid; gap: 16px">${itens.map(cartaoGravacao).join('')}</div></div>`;
+  let corpo;
+  if (cr.sub === 'estaticos') corpo = `<div class="secao"><div class="secao__cabeca"><div><span class="rotulo">feed do instagram</span><h3 class="f-titulo-3">Estáticos e carrosséis de outubro</h3><p class="f-legenda">Arte, texto exato e legenda pronta de cada publicação do feed, em ordem de data.</p></div></div><div style="display: grid; gap: 16px">${D.publicacoes.map(cartaoEstatico).join('')}</div></div>`;
+  else if (cr.sub === 'videos') corpo = orient + lista(R.itens.filter((g) => !eAudio(g)), 'vídeos') + apoio;
+  else corpo = orient + lista(R.itens.filter(eAudio), 'áudios');
+  $('#lista-criativos').innerHTML = barra + `<div style="display: grid; gap: 24px">${corpo}</div>`;
   for (const g of R.itens) copias.set(`rot:${g.id}`, g.roteiro.join('\n\n'));
 }
+$('#lista-criativos').addEventListener('click', (e) => {
+  const b = e.target.closest('[data-cr-sub]');
+  if (!b) return;
+  cr.sub = b.dataset.crSub;
+  renderCriativos();
+  $(`#lista-criativos [data-cr-sub="${cr.sub}"]`)?.focus();
+});
 async function copiarDoPainel(e) {
   const c = e.target.closest('[data-copia]');
   if (!c) return;
@@ -638,7 +668,7 @@ async function copiarDoPainel(e) {
   catch { toast('Não foi possível copiar — selecione o texto manualmente'); }
 }
 $('#lista-mensagens').addEventListener('click', copiarDoPainel);
-$('#lista-roteiros').addEventListener('click', copiarDoPainel);
+$('#lista-criativos').addEventListener('click', copiarDoPainel);
 
 // ---------- Montagem ----------
 renderCabecalho();
@@ -648,7 +678,7 @@ renderDecisoes();
 renderOperacao();
 renderAgenda();
 renderMensagens();
-renderRoteiros();
+renderCriativos();
 atualizarContadores();
 
 $('#rodape-fonte').textContent = `Atualizado em ${D.atualizadoEm.split('-').reverse().join('/')} · dados/hls.json`;

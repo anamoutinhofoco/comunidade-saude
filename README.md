@@ -4,7 +4,7 @@ Site estático (HTML/CSS/JS, sem framework) no design system **Foco**, publicado
 
 | Rota | Conteúdo |
 |---|---|
-| `/` | **Painel de status** da HLS, com abas: **Visão geral** (funil e situação por frente) · **Agenda** (calendário em dia, semana e mês com as publicações do feed, os disparos de WhatsApp, checkpoints e decisões com prazo; clique na atividade para ver legenda, versões M e O da mensagem e botão de copiar) · **Disparos** (boas-vindas e os 9 disparos das comunidades, versões M e O, enquetes e alternativas) · **Roteiros** (gravações opcionais G01 a G08) · **Decisões** (o que destrava a operação) · **Operação** (fluxo insumos → publicação e regras). Cada aba tem endereço próprio (ex.: `/#decisoes`). |
+| `/` | **Painel de status** da HLS, com abas: **Visão geral** (funil e situação por frente) · **Agenda** (calendário em dia, semana e mês com as publicações do feed, os disparos de WhatsApp, checkpoints e decisões com prazo; clique na atividade para ver legenda, versões M e O da mensagem e botão de copiar) · **Disparos** (boas-vindas e os 9 disparos das comunidades, versões M e O, enquetes e alternativas) · **Criativos** (estáticos e carrosséis do feed, e roteiros de vídeos e áudios, G01 a G08) · **Decisões** (o que destrava a operação) · **Operação** (fluxo insumos → publicação e regras). Cada aba tem endereço próprio (ex.: `/#decisoes`). |
 | `/planejamento` | **Planejamento de outubro de 2026**: direção do mês, público, feed do Instagram, disparos das comunidades, integração, operação, medição e dependências. Tem botão "Salvar em PDF". |
 
 ## Como os dados funcionam
@@ -19,7 +19,7 @@ A fonte de verdade do painel é **`dados/hls.json`**. No build, `scripts/gerar-d
 | `disparos` | Disparos de WhatsApp (C01 a C09) com versão `medicos` e `outras`, status e alternativa sem link. Alimenta a Agenda. |
 | `boasVindas` | Mensagens B01-M e B01-O, enviadas na entrada de cada membro (sem data). |
 | `checkpoints` | Verificações de métricas com data. Alimenta a Agenda. |
-| `roteiros` | Gravações opcionais (G01 a G08): roteiro, captação, legenda e apoio no WhatsApp, mais materiais de apoio (aba Roteiros). |
+| `roteiros` | Gravações opcionais (G01 a G08): roteiro, captação, legenda e apoio no WhatsApp, mais materiais de apoio (aba Criativos). |
 | `membros` | Número de membros por comunidade na linha de base. |
 | `operacao` | Fluxo e regras da aba Operação. |
 
