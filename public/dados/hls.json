@@ -1,0 +1,768 @@
+{
+  "cliente": "HLS",
+  "projeto": "HLS — business club de saúde (FOCO › Comunidade Saúde)",
+  "atualizadoEm": "2026-10-02",
+  "resumo": "Business club premium para donos de clínicas, médicos e gestores da saúde. A operação conecta aquisição, comunidade, Lives, conteúdo e conversão.",
+  "funil": [
+    "Aquisição",
+    "Entrada na comunidade",
+    "Aquecimento",
+    "Live",
+    "CTA",
+    "Venda",
+    "Follow-up"
+  ],
+  "frentes": [
+    {
+      "id": "comunidades",
+      "nome": "Comunidades e automação",
+      "icone": "i-pessoas",
+      "situacao": "Aguardando validação",
+      "tom": "ajuste",
+      "estado": "Sequência de outubro escrita: 9 disparos por comunidade (Médicos e Outras Especialidades), de 03 a 31/10. Não está pronta para agendar até haver publicador, aprovação HLS, linha de base e links testados.",
+      "proximo": "Nomear publicador e aprovador, medir as comunidades, testar página de entrada e formulário e liberar os disparos por lote."
+    },
+    {
+      "id": "lives",
+      "nome": "Lives",
+      "icone": "i-video",
+      "situacao": "Em andamento",
+      "tom": "revisao",
+      "estado": "Peça central para relacionamento e venda. Live de 24/08 e Live conjunta de 23/09, às 19h. Nenhuma Live está confirmada para outubro.",
+      "proximo": "Tratar cada Live como projeto: objetivo, divulgação antecipada, tráfego, base, calendário e conversão. Todo encontro vira matéria-prima de conteúdo."
+    },
+    {
+      "id": "instagram",
+      "nome": "Conteúdo para Instagram",
+      "icone": "i-imagem",
+      "situacao": "Planejado",
+      "tom": "revisao",
+      "estado": "Calendário de outubro fechado: 15 publicações de 02 a 30/10 (11 estáticas e 4 carrosséis, 3 deles prontos), uma a cada dois dias.",
+      "proximo": "Fechar link da bio, produzir os estáticos em dois lotes, criar o carrossel de 22/10 e seguir o fluxo de aprovação."
+    },
+    {
+      "id": "networking",
+      "nome": "Poder do Network Doctors",
+      "icone": "i-conversa",
+      "situacao": "Prioridade",
+      "tom": "atrasado",
+      "estado": "Frente de networking tratada como urgente, com mensagens solicitadas e prazo em 08/09/2026.",
+      "proximo": "Mostrar valor em conexões, acesso, relacionamento e oportunidades entre profissionais da saúde, não só em conteúdo."
+    },
+    {
+      "id": "aquisicao",
+      "nome": "Aquisição e divulgação",
+      "icone": "i-megafone",
+      "situacao": "A validar",
+      "tom": "neutro",
+      "estado": "Em outubro a aquisição é orgânica: Instagram, WhatsApp e indicação entre pares, sem mídia paga. Falta validar a página de entrada e a origem das entradas.",
+      "proximo": "Validar volume de tráfego e usar eventos presenciais e palestras como porta de entrada da comunidade."
+    },
+    {
+      "id": "identidade",
+      "nome": "Identidade e posicionamento",
+      "icone": "i-alvo",
+      "situacao": "Direção definida",
+      "tom": "aprovado",
+      "estado": "Linguagem editorial, empresarial e sofisticada: azul profundo, branco ou off-white, laranja só como acento e fotos reais.",
+      "proximo": "Aplicar a direção em todas as peças e eliminar o que soa lúdico ou de infoproduto (3D clay, cartoons, clipart, selos promocionais)."
+    },
+    {
+      "id": "monetizacao",
+      "nome": "Monetização e parceria",
+      "icone": "i-grafico",
+      "situacao": "Sem visibilidade",
+      "tom": "atrasado",
+      "estado": "Não há responsável do lado parceiro informando quais produtos estão sendo promovidos e quais vendas foram geradas.",
+      "proximo": "Definir esse responsável. Sem a visão de vendas, repensar o papel da parceria: HLS como ecossistema educacional, com parceiros e patrocínios."
+    }
+  ],
+  "marcos": [
+    {
+      "id": "MK-01",
+      "data": "2026-08-24",
+      "hora": null,
+      "frente": "Lives",
+      "titulo": "Live do dia 24 (não é uma Live de 24 horas)",
+      "detalhe": "Havia dúvida entre manter ou adiar, porque a comunicação anterior estava fraca e podia não gerar público. A recomendação foi avaliar objetivo, divulgação, tráfego, base, calendário e capacidade de conversão.",
+      "responsavel": "HLS + FOCO",
+      "status": "A confirmar"
+    },
+    {
+      "id": "MK-02",
+      "data": "2026-08-31",
+      "hora": null,
+      "frente": "Instagram",
+      "titulo": "Conteúdo de Instagram da HLS (leva de agosto)",
+      "detalhe": "Prazo registrado no projeto. Em 22/09 ainda havia conteúdo aguardando aprovação.",
+      "responsavel": "FOCO › Comunidade Saúde",
+      "status": "Aguardando aprovação"
+    },
+    {
+      "id": "MK-03",
+      "data": "2026-09-08",
+      "hora": null,
+      "frente": "Network Doctors",
+      "titulo": "Mensagens do “Poder do Network Doctors”",
+      "detalhe": "Solicitadas como tarefa urgente.",
+      "responsavel": "FOCO",
+      "status": "A confirmar"
+    },
+    {
+      "id": "MK-04",
+      "data": "2026-09-23",
+      "hora": "19:00",
+      "frente": "Lives",
+      "titulo": "Live conjunta com o Dr. Ivan",
+      "detalhe": "Live feita em conjunto. O Dr. Ivan é um projeto separado, com outra comunidade e base própria; a comunicação para a base dele não faz parte da HLS.",
+      "responsavel": "HLS + FOCO",
+      "status": "Realizado"
+    }
+  ],
+  "decisoes": [
+    {
+      "id": "DC-01",
+      "tipo": "Operação",
+      "decisao": "Quem, do lado da HLS, fornece os insumos e aprova as comunicações",
+      "impacto": "Sem um responsável único, conteúdos acumulam em aprovação e Lives chegam ao time em cima da hora.",
+      "responsavel": "HLS",
+      "prazo": null,
+      "status": "Aberta"
+    },
+    {
+      "id": "DC-02",
+      "tipo": "Operação",
+      "decisao": "Calendário mensal de eventos, palestras, pitches, fotos e vídeos, com revisão quinzenal",
+      "impacto": "É o que tira a comunicação do modo reativo e permite divulgar Lives e eventos com antecedência.",
+      "responsavel": "HLS",
+      "prazo": null,
+      "status": "Aberta"
+    },
+    {
+      "id": "DC-03",
+      "tipo": "Operação",
+      "decisao": "Prazo mínimo para a HLS enviar materiais e pasta central de ativos",
+      "impacto": "Evita que eventos e Lives cheguem ao time no último momento.",
+      "responsavel": "HLS + FOCO",
+      "prazo": null,
+      "status": "Aberta"
+    },
+    {
+      "id": "DC-04",
+      "tipo": "Monetização",
+      "decisao": "Responsável do lado parceiro por informar produtos promovidos e vendas geradas",
+      "impacto": "Sem esse dado não é possível medir se comunidade, Lives e conteúdo geram negócio.",
+      "responsavel": "Parceiro",
+      "prazo": null,
+      "status": "Aberta"
+    },
+    {
+      "id": "DC-05",
+      "tipo": "Estratégia",
+      "decisao": "Papel da parceria caso a visão de vendas não seja estruturada",
+      "impacto": "Alternativa: tratar a HLS como ecossistema educacional e explorar parceiros e patrocínios em vez de depender só de conversão direta.",
+      "responsavel": "HLS + FOCO",
+      "prazo": null,
+      "status": "Aberta"
+    },
+    {
+      "id": "DC-06",
+      "tipo": "Comunidade",
+      "decisao": "Número adicional de WhatsApp para apoiar a operação (inicialmente associado ao Rafael)",
+      "impacto": "Define a capacidade de administrar comunidades de forma centralizada e controlada.",
+      "responsavel": "HLS",
+      "prazo": null,
+      "status": "Aberta"
+    },
+    {
+      "id": "DC-08",
+      "tipo": "Bloqueador",
+      "decisao": "Nomear o publicador (administrador com acesso) e confirmar o número ou canal oficial de envio",
+      "impacto": "Sem publicador não há como agendar nenhum disparo das comunidades.",
+      "responsavel": "HLS",
+      "prazo": "2026-10-02",
+      "status": "Aberta"
+    },
+    {
+      "id": "DC-09",
+      "tipo": "Bloqueador",
+      "decisao": "Registrar a linha de base atual de membros e testar o link da bio e a identificação por CRM ou conselho",
+      "impacto": "Os valores de julho e os status de setembro não substituem a medição de hoje; a bio precisa levar à comunidade certa antes da primeira publicação.",
+      "responsavel": "FOCO + HLS",
+      "prazo": "2026-10-02",
+      "status": "Aberta"
+    },
+    {
+      "id": "DC-10",
+      "tipo": "Aprovação",
+      "decisao": "Aprovação HLS das mensagens e revisão técnica de qualquer conteúdo clínico, até dois dias antes de cada envio",
+      "impacto": "Os disparos podem ser liberados por lote depois dessa aprovação.",
+      "responsavel": "HLS + Dr. Rafael ou profissional indicado",
+      "prazo": null,
+      "status": "Aberta"
+    },
+    {
+      "id": "DC-11",
+      "tipo": "Dependência",
+      "decisao": "Nomear o analista de métricas e o responsável por respostas e atendimento",
+      "impacto": "Métricas dependem de relatórios em 02, 16 e 31/10; respostas externas passam a ser diárias após formulário e convite.",
+      "responsavel": "HLS + FOCO",
+      "prazo": "2026-10-02",
+      "status": "Aberta"
+    },
+    {
+      "id": "DC-12",
+      "tipo": "Dependência",
+      "decisao": "Criar e testar o formulário de escuta (disparo C07 de 24/10) e definir o destino das respostas",
+      "impacto": "Sem formulário, C07 usa a alternativa sem link.",
+      "responsavel": "Responsável digital HLS/FOCO",
+      "prazo": "2026-10-23",
+      "status": "Aberta"
+    },
+    {
+      "id": "DC-13",
+      "tipo": "Dependência",
+      "decisao": "Testar a página de entrada com segmentação e links rastreados (disparo C08 de 28/10)",
+      "impacto": "Sem página validada, o convite de indicação não é enviado; C09 é antecipada.",
+      "responsavel": "Responsável digital HLS/FOCO",
+      "prazo": "2026-10-27",
+      "status": "Aberta"
+    },
+    {
+      "id": "DC-14",
+      "tipo": "Criativo",
+      "decisao": "Arte do carrossel de 22/10 (7 lâminas, 1080 x 1350 px)",
+      "impacto": "É a maior carga de design do mês; o roteiro e a legenda já estão escritos.",
+      "responsavel": "Designer do Instagram",
+      "prazo": "2026-10-21",
+      "status": "Aberta"
+    }
+  ],
+  "diagnostico": [
+    {
+      "frente": "Automação",
+      "diagnostico": "Tecnicamente estava funcionando, mas a comunicação precisava melhorar",
+      "acao": "Revisar a sequência completa, não só as mensagens avulsas"
+    },
+    {
+      "frente": "Mensagens",
+      "diagnostico": "Fracas e pouco atrativas no início do projeto",
+      "acao": "Reescrever com tom de business club e CTA claro"
+    },
+    {
+      "frente": "Comunidade",
+      "diagnostico": "Falta de volume, participação e intenção",
+      "acao": "Administração centralizada; reações e enquetes como mecanismos de interação"
+    },
+    {
+      "frente": "Lives",
+      "diagnostico": "Divulgação muitas vezes próxima demais da data",
+      "acao": "Calendário real de eventos e plano de divulgação antecipado"
+    },
+    {
+      "frente": "Conteúdo",
+      "diagnostico": "Risco de funcionar de forma isolada e reativa",
+      "acao": "Conteúdo guiado por calendário e prioridades comerciais"
+    },
+    {
+      "frente": "Insumos",
+      "diagnostico": "Falta de calendário e de materiais antecipados",
+      "acao": "Cronograma mensal de eventos e pasta central de ativos"
+    },
+    {
+      "frente": "Aprovação",
+      "diagnostico": "Dependência de retorno do cliente e dos parceiros",
+      "acao": "Responsável de aprovação definido e prazo mínimo de retorno"
+    },
+    {
+      "frente": "Instagram",
+      "diagnostico": "Conteúdos chegaram a acumular aguardando aprovação",
+      "acao": "Fluxo de aprovação no Namtab, com responsáveis e prazos"
+    },
+    {
+      "frente": "Identidade",
+      "diagnostico": "Precisava parecer mais business e premium, menos lúdica",
+      "acao": "Direção editorial: azul sóbrio, off-white, laranja só como acento"
+    },
+    {
+      "frente": "Monetização",
+      "diagnostico": "Sem acompanhamento de produto promovido → venda",
+      "acao": "Definir responsável pela informação de vendas do lado parceiro"
+    },
+    {
+      "frente": "Operação",
+      "diagnostico": "Falta de responsáveis, prazos e fluxo claro",
+      "acao": "Registrar solicitações, prazos, responsáveis e bloqueios no Namtab"
+    }
+  ],
+  "operacao": {
+    "fluxo": [
+      {
+        "etapa": "Insumos",
+        "texto": "HLS envia calendário de eventos, materiais, fotos e vídeos dentro do prazo mínimo."
+      },
+      {
+        "etapa": "Planejamento",
+        "texto": "Calendário revisto no mínimo a cada quinze dias, ligado a prioridades comerciais."
+      },
+      {
+        "etapa": "Produção",
+        "texto": "Conteúdo, copy e peças produzidos a partir dos insumos e do posicionamento."
+      },
+      {
+        "etapa": "Aprovação",
+        "texto": "Um responsável da HLS aprova, com prazo de retorno combinado."
+      },
+      {
+        "etapa": "Publicação",
+        "texto": "Publicação e disparos, com registro no Namtab."
+      }
+    ],
+    "regras": [
+      {
+        "tema": "Registro",
+        "orientacao": "Solicitações, prazos, responsáveis e bloqueios ficam registrados no Namtab."
+      },
+      {
+        "tema": "Ativos",
+        "orientacao": "Uma pasta centralizada de ativos recebe todo material enviado pela HLS."
+      },
+      {
+        "tema": "Antecedência",
+        "orientacao": "Existe um prazo mínimo para envio de materiais; Lives e eventos não entram em cima da hora."
+      },
+      {
+        "tema": "Reaproveitamento",
+        "orientacao": "Cada Live deve virar matéria-prima de conteúdo para as redes sociais."
+      },
+      {
+        "tema": "Projetos separados",
+        "orientacao": "Dr. Ivan é outro projeto, com outra comunidade, base e produto. Nada dele entra no painel, nas comunidades ou nos disparos da HLS; ações conjuntas, como a Live, são tratadas como pontuais."
+      }
+    ]
+  },
+  "publicacoes": [
+    {
+      "id": "IG-01",
+      "data": "2026-10-02",
+      "hora": "19:00",
+      "formato": "Estático",
+      "tema": "HLS: para quem toma decisões na saúde. Apresentação",
+      "titulo": "Para quem toma decisões na saúde",
+      "situacao": "Criar",
+      "cta": "Conhecer a comunidade",
+      "textoArte": "\"Quem cuida da saúde também precisa de espaço para pensar suas decisões.\"",
+      "apoio": "\"HLS | conhecimento, especialistas e troca entre profissionais da saúde\"",
+      "visual": "tipografia forte, imagem de profissionais em conversa, sem simular encontro real da HLS se a foto não for documental.",
+      "legenda": "A rotina pede decisões clínicas, operacionais e de liderança. Algumas amadurecem melhor quando há acesso a boas perguntas e experiências de outros profissionais. A HLS reúne médicos e outras especialidades da saúde em comunidades segmentadas para compartilhar conteúdo, especialistas e oportunidades relevantes. Se esse tipo de troca faz sentido para você, conheça a HLS pelo link da bio."
+    },
+    {
+      "id": "IG-02",
+      "data": "2026-10-04",
+      "hora": "10:00",
+      "formato": "Carrossel",
+      "tema": "Isolamento profissional. Identificação",
+      "titulo": "Isolamento profissional",
+      "situacao": "Pronto",
+      "cta": "Compartilhar com um par",
+      "arquivo": "/Users/analuisamoutinho/Downloads/Criativos HLS/02 - ISOLAMENTO PROFISSIONAL/crop/",
+      "publicacao": "usar Slice 1.png a Slice 6.png, nessa ordem. O arquivo PREVIEW 2.png é apenas a visão panorâmica de conferência.",
+      "funcao": "mostrar o custo de pensar problemas da clínica sem contraponto de outros profissionais.",
+      "legenda": "Quem lidera uma clínica costuma decidir com as informações disponíveis na própria rotina. Isso ajuda a agir rápido, mas pode limitar as perguntas feitas antes de escolher um caminho. Conversas entre pares trazem experiências diferentes para a mesa. Qual decisão profissional você gostaria de discutir com alguém que vive desafios parecidos? Envie este carrossel a um colega com quem você teria essa conversa."
+    },
+    {
+      "id": "IG-03",
+      "data": "2026-10-06",
+      "hora": "12:30",
+      "formato": "Estático",
+      "tema": "A pergunta que abre uma decisão de gestão. Utilidade",
+      "titulo": "A pergunta antes da resposta",
+      "situacao": "Criar",
+      "cta": "Salvar",
+      "textoArte": "\"Antes de pedir uma solução, descreva o problema que se repete.\"",
+      "apoio": "\"Quando acontece? Quem é afetado? O que já foi tentado?\"",
+      "visual": "tipografia e três campos simples, como notas de uma reunião.",
+      "legenda": "Muitas reuniões começam com sugestões de solução e terminam sem acordo sobre o problema. Na próxima dificuldade recorrente da clínica, faça três perguntas: quando ela aparece, quem precisa lidar com ela e o que a equipe já tentou. Esse registro ajuda a distinguir um caso isolado de uma falha de processo. Salve para usar na próxima conversa de gestão."
+    },
+    {
+      "id": "IG-04",
+      "data": "2026-10-08",
+      "hora": "19:00",
+      "formato": "Carrossel",
+      "tema": "A consulta pode ser excelente. Jornada do paciente",
+      "titulo": "A consulta pode ser excelente",
+      "situacao": "Pronto",
+      "cta": "Revisar um contato",
+      "arquivo": "/Users/analuisamoutinho/Downloads/Criativos HLS/03 - A CONSULTA PODE SER EXCELENTE/crop/",
+      "publicacao": "usar Slice 1.png a Slice 7.png, nessa ordem. PREVIEW 3.png é apenas a visão panorâmica.",
+      "funcao": "ampliar a ideia de experiência do paciente para antes e depois da consulta.",
+      "legenda": "A percepção do paciente começa no primeiro contato. Agendamento, confirmação, orientações para chegar e clareza sobre os próximos passos compõem a experiência. Vale percorrer essa jornada como se você estivesse chegando à clínica pela primeira vez. Em qual contato a sua equipe encontraria mais dúvidas hoje? Escolha um ponto para revisar nesta semana."
+    },
+    {
+      "id": "IG-05",
+      "data": "2026-10-10",
+      "hora": "10:00",
+      "formato": "Estático",
+      "tema": "Antes da consulta: o que confirmar com a equipe. Utilidade",
+      "titulo": "Conferência antes da consulta",
+      "situacao": "Criar",
+      "cta": "Salvar",
+      "textoArte": "\"O paciente recebeu o que precisa saber antes de chegar?\"",
+      "apoio": "\"Horário. Endereço. Preparo, quando houver. Canal para dúvidas.\"",
+      "visual": "checklist limpo, sem ícones médicos decorativos.",
+      "legenda": "Uma confirmação útil evita que a pessoa tenha de procurar informações espalhadas em mensagens diferentes. Confira com a equipe se o contato prévio informa horário, endereço, orientações pertinentes e onde tirar dúvidas. Se houver preparo específico, o texto precisa passar por validação do profissional responsável. O objetivo é dar contexto para a chegada, com segurança e clareza. Salve este checklist para a próxima revisão do atendimento."
+    },
+    {
+      "id": "IG-06",
+      "data": "2026-10-12",
+      "hora": "19:00",
+      "formato": "Estático",
+      "tema": "O que se troca em uma comunidade profissional. Posicionamento",
+      "titulo": "O valor da troca",
+      "situacao": "Criar",
+      "cta": "Conhecer a HLS",
+      "textoArte": "\"Uma experiência compartilhada pode melhorar a próxima pergunta de outra pessoa.\"",
+      "apoio": "\"HLS | troca entre profissionais da saúde\"",
+      "visual": "composição editorial com duas perspectivas ou duas cadeiras em conversa.",
+      "legenda": "Um profissional traz uma situação vivida. Outro pergunta o que ainda não foi considerado. A conversa amplia o repertório de ambos, mesmo quando atuam em contextos diferentes. É esse tipo de troca que queremos cultivar na HLS, junto de conteúdo e acesso a especialistas. Para conhecer a comunidade adequada à sua área de atuação, acesse o link da bio."
+    },
+    {
+      "id": "IG-07",
+      "data": "2026-10-14",
+      "hora": "12:30",
+      "formato": "Carrossel",
+      "tema": "Uma comunidade ganha força. Autoridade e visão",
+      "titulo": "Uma comunidade ganha força",
+      "situacao": "Pronto",
+      "cta": "Conhecer a HLS",
+      "arquivo": "/Users/analuisamoutinho/Downloads/Criativos HLS/04 - UMA COMUNIDADE GANHA FORÇA/crop/",
+      "publicacao": "usar Slice 1.png a Slice 6.png, nessa ordem. PREVIEW 4.png é apenas a visão panorâmica.",
+      "funcao": "apresentar a contribuição do Dr. Rafael à visão de gestão e comunidade da HLS.",
+      "legenda": "A trajetória do Dr. Rafael reúne medicina, operação e liderança. No carrossel, essa experiência aparece como ponto de partida para discutir uma dificuldade conhecida por muitos gestores: a clínica depender de uma pessoa para decidir tudo. Quando práticas vividas são compartilhadas, outros profissionais ganham referências para examinar a própria rotina. Conheça a HLS pelo link da bio."
+    },
+    {
+      "id": "IG-08",
+      "data": "2026-10-16",
+      "hora": "19:00",
+      "formato": "Estático",
+      "tema": "Decisões concentradas no dono. Gestão",
+      "titulo": "Decisão concentrada",
+      "situacao": "Criar",
+      "cta": "Observar a rotina",
+      "textoArte": "\"Se toda decisão chega ao dono, a equipe espera mais do que deveria.\"",
+      "apoio": "\"Comece pelas decisões que se repetem.\"",
+      "visual": "fluxo simples de três decisões convergindo para uma pessoa, sem ilustrar sobrecarga de forma dramática.",
+      "legenda": "Observe quais perguntas chegam à liderança várias vezes por semana. Em cada uma, registre o critério usado para decidir, quem pode aplicá-lo e quando o caso precisa ser escalado. Esse exercício ajuda a dar autonomia com limites claros. Escolha uma decisão recorrente da sua rotina para mapear hoje."
+    },
+    {
+      "id": "IG-09",
+      "data": "2026-10-18",
+      "hora": "10:00",
+      "formato": "Estático",
+      "tema": "Uma reunião curta precisa sair com responsáveis. Utilidade",
+      "titulo": "Reunião com próximo passo",
+      "situacao": "Criar",
+      "cta": "Salvar",
+      "textoArte": "\"Uma reunião útil termina com responsável e prazo.\"",
+      "apoio": "\"Decisão tomada. Pessoa responsável. Data de retorno.\"",
+      "visual": "ata curta de três linhas, com espaço visual e alta legibilidade.",
+      "legenda": "Uma conversa pode ser produtiva e ainda assim se perder no dia seguinte. Antes de encerrar, registre a decisão, quem assume a ação e quando o grupo voltará ao assunto. Se surgiu um bloqueio, ele também precisa de dono. Use essa estrutura na próxima reunião curta da equipe e compare a clareza dos encaminhamentos. Salve para consultar depois."
+    },
+    {
+      "id": "IG-10",
+      "data": "2026-10-20",
+      "hora": "12:30",
+      "formato": "Estático",
+      "tema": "Novidade na saúde: três perguntas antes de aderir. Curadoria",
+      "titulo": "Novidade sob análise",
+      "situacao": "Criar",
+      "cta": "Compartilhar",
+      "textoArte": "\"Uma novidade merece três perguntas antes de entrar na rotina.\"",
+      "apoio": "\"Que evidência existe? Para quem se aplica? O que muda na operação?\"",
+      "visual": "três perguntas numeradas; sem imagem de equipamento ou produto específico.",
+      "legenda": "Um tema novo pode despertar interesse e ainda exigir avaliação cuidadosa. Comece pela qualidade da evidência, pelo perfil de pessoas a quem a proposta se aplica e pelas condições necessárias para implementá-la. Depois, discuta com profissionais habilitados e consulte as normas pertinentes à sua atuação. Compartilhe com alguém que participa dessas decisões na sua equipe."
+    },
+    {
+      "id": "IG-11",
+      "data": "2026-10-22",
+      "hora": "19:00",
+      "formato": "Carrossel",
+      "tema": "Como avaliar uma tecnologia antes de levar à clínica. Utilidade",
+      "titulo": "Como avaliar uma tecnologia antes de levar à clínica",
+      "situacao": "Criar, 7 lâminas",
+      "cta": "Salvar",
+      "visual": "7 lâminas, 1080 x 1350 px, uma mensagem central por lâmina. Usar a identidade dos carrosséis anexados, com gráficos e documentos apenas se forem dados reais e autorizados.",
+      "framework": "abertura curiosa + passo a passo. A primeira lâmina abre uma dúvida concreta; as seguintes avançam de evidência para aplicação, operação e decisão.",
+      "legenda": "A decisão de incorporar uma tecnologia reúne evidência, adequação à prática e capacidade de execução. Antes de comparar opções, defina o problema que precisa ser resolvido e os critérios pelos quais a equipe avaliará a escolha. O carrossel organiza quatro perguntas para iniciar essa análise. Elas não substituem avaliação científica, técnica ou regulatória específica. Salve para usar na próxima reunião.",
+      "laminas": [
+        "Uma tecnologia parece promissora. O que você precisa saber antes de adotá-la?",
+        "O primeiro impulso costuma ser perguntar pelo equipamento. Comece pela decisão clínica ou operacional que ele deveria melhorar.",
+        "1. Examine a evidência. Que resultados foram estudados, em qual população e com quais limites?",
+        "2. Defina a aplicação. Para quais situações ela faz sentido na sua prática? Quem precisa avaliar a indicação?",
+        "3. Calcule a operação. Treinamento, tempo de equipe, manutenção e custos entram na mesma conversa.",
+        "4. Estabeleça critérios de acompanhamento. O que será observado depois da implementação?",
+        "Uma adoção responsável começa com perguntas melhores. Salve este roteiro para a próxima análise da equipe."
+      ]
+    },
+    {
+      "id": "IG-12",
+      "data": "2026-10-24",
+      "hora": "10:00",
+      "formato": "Estático",
+      "tema": "Uma boa pergunta atravessa especialidades. Comunidade",
+      "titulo": "Conversas entre especialidades",
+      "situacao": "Criar",
+      "cta": "Comentar um tema",
+      "textoArte": "\"Áreas diferentes podem fazer a mesma boa pergunta: o que funciona na prática?\"",
+      "apoio": "\"A resposta depende do contexto de cada profissão.\"",
+      "visual": "retratar diferentes profissionais da saúde sem sugerir que todos executam os mesmos atos.",
+      "legenda": "Profissionais de áreas diferentes podem compartilhar desafios de comunicação, organização e atualização. A aplicação de cada ideia precisa respeitar a formação, o escopo de atuação e as normas da profissão. Na HLS, há comunidades segmentadas para médicos e para outras especialidades da saúde. Que tema de gestão ou atualização você gostaria de ver em uma conversa entre profissionais? Escreva nos comentários."
+    },
+    {
+      "id": "IG-13",
+      "data": "2026-10-26",
+      "hora": "19:00",
+      "formato": "Estático",
+      "tema": "O que uma comunidade útil entrega entre eventos. Posicionamento",
+      "titulo": "Valor entre encontros",
+      "situacao": "Criar",
+      "cta": "Conhecer a HLS",
+      "textoArte": "\"Uma comunidade útil continua entregando valor entre os encontros.\"",
+      "apoio": "\"Conteúdo. Perguntas relevantes. Especialistas. Oportunidades coerentes.\"",
+      "visual": "blocos editoriais discretos; evitar calendário de eventos sem datas confirmadas.",
+      "legenda": "Uma live pode abrir uma discussão, mas a relação com a comunidade continua depois dela. Curadoria de temas, conteúdo aplicável e acesso a perspectivas diferentes ajudam o profissional a manter o assunto vivo na rotina. Esse é o papel que a HLS busca construir. Para acompanhar os próximos conteúdos na comunidade da sua área, acesse o link da bio."
+    },
+    {
+      "id": "IG-14",
+      "data": "2026-10-28",
+      "hora": "12:30",
+      "formato": "Estático",
+      "tema": "Três revisões possíveis para a próxima semana. Síntese",
+      "titulo": "Três revisões para novembro",
+      "situacao": "Criar",
+      "cta": "Escolher uma ação",
+      "textoArte": "\"Antes do próximo mês, escolha uma rotina para revisar.\"",
+      "apoio": "\"Primeiro contato. Reunião de equipe. Critérios para novas soluções.\"",
+      "visual": "três cartões simples; manter as frases da arte curtas.",
+      "legenda": "Outubro trouxe três perguntas práticas para a gestão: o paciente recebe orientação clara antes da consulta? As reuniões terminam com responsáveis? Novas soluções são avaliadas com critérios definidos? Escolha uma dessas rotinas, observe como ela funciona hoje e registre um ajuste viável para novembro. Uma revisão pequena e concreta já cria uma conversa melhor com a equipe."
+    },
+    {
+      "id": "IG-15",
+      "data": "2026-10-30",
+      "hora": "19:00",
+      "formato": "Estático",
+      "tema": "Outubro termina; a conversa continua. Continuidade",
+      "titulo": "Continuidade da comunidade",
+      "situacao": "Criar",
+      "cta": "Entrar na comunidade",
+      "textoArte": "\"Outubro termina. As decisões continuam.\"",
+      "apoio": "\"Siga a conversa na HLS.\"",
+      "visual": "assinatura institucional HLS, sem promessa de agenda futura ainda não confirmada.",
+      "publicacao": "revisar capa, ordem das lâminas, acentuação, contraste, legenda, marcações e destino do link. Responder comentários e directs em janela diária definida pela equipe.",
+      "legenda": "Ao longo do mês, falamos sobre jornada do paciente, decisões de gestão, avaliação de tecnologias e troca entre profissionais. Esses temas continuam presentes na prática depois que o calendário vira. A HLS é um espaço para acompanhar conteúdo, especialistas e conversas relevantes para profissionais da saúde. Se você quer participar, acesse o link da bio e escolha a comunidade correspondente à sua área."
+    }
+  ],
+  "disparos": [
+    {
+      "codigo": "C01",
+      "data": "2026-10-03",
+      "hora": "10:30",
+      "etapa": "Entrada",
+      "tema": "Uma decisão para observar nesta semana",
+      "objetivo": "Primeiro valor e contexto",
+      "cta": "Observar rotina",
+      "formato": "Texto, sem peça",
+      "execucao": "Admin HLS",
+      "aprovacao": "HLS, pendente",
+      "status": "A fazer",
+      "medicos": "Uma decisão chega ao médico pela segunda ou terceira vez na mesma semana. Antes de respondê-la novamente, vale registrar: qual informação faltou, quem precisava dela e em que momento a dúvida apareceu?\n\nEsse pequeno registro mostra se a equipe precisa de um critério compartilhado, de uma orientação mais clara ou de uma conversa sobre o processo.\n\nEscolha uma decisão recorrente para observar nos próximos dias.",
+      "outras": "Há dúvidas que voltam à rotina porque a informação ficou espalhada entre pessoas e canais.\n\nNa próxima vez que isso acontecer, anote qual informação faltou, quem precisava dela e quando a dúvida surgiu. O registro ajuda a equipe a revisar a comunicação ou o processo dentro das responsabilidades de cada profissional.\n\nEscolha uma dúvida recorrente para observar nesta semana."
+    },
+    {
+      "codigo": "C02",
+      "data": "2026-10-07",
+      "hora": "12:30",
+      "etapa": "Utilidade",
+      "tema": "O que o contato anterior à consulta precisa resolver",
+      "objetivo": "Aplicar tema do feed",
+      "cta": "Revisar mensagem",
+      "formato": "Texto, sem peça",
+      "execucao": "Admin HLS",
+      "aprovacao": "HLS e técnico, pendente",
+      "status": "A fazer",
+      "medicos": "Antes da consulta, o paciente precisa encontrar informações básicas sem montar um quebra-cabeça de mensagens.\n\nPegue a confirmação que sua clínica usa hoje. Ela informa horário, endereço, orientações pertinentes e um canal para dúvidas? Se houver preparo específico, confirme o texto com o responsável técnico.\n\nUma revisão de cinco minutos pode revelar onde a jornada está pouco clara.",
+      "outras": "O contato anterior ao atendimento já cria uma expectativa sobre como a pessoa será recebida.\n\nRevise a mensagem enviada hoje: horário, local, orientações pertinentes à sua área e canal para dúvidas estão claros? Qualquer instrução técnica deve ser conferida pelo profissional responsável.\n\nEscolha um trecho que costuma gerar pergunta e ajuste a redação com a equipe."
+    },
+    {
+      "codigo": "C03",
+      "data": "2026-10-10",
+      "hora": "10:30",
+      "etapa": "Diagnóstico",
+      "tema": "Qual pergunta se repete na equipe?",
+      "objetivo": "Identificar decisão recorrente",
+      "cta": "Registrar pergunta",
+      "formato": "Texto, sem peça",
+      "execucao": "Admin HLS",
+      "aprovacao": "HLS, pendente",
+      "status": "A fazer",
+      "medicos": "Qual pergunta a equipe leva ao médico repetidamente?\n\nAnote a pergunta exata antes de criar uma resposta padrão. Depois, verifique se os casos têm o mesmo contexto e quais decisões exigem avaliação médica individual.\n\nO objetivo é separar o que pode virar orientação de processo daquilo que precisa permanecer sob decisão profissional.",
+      "outras": "Qual dúvida volta com frequência na sua equipe?\n\nRegistre a pergunta como ela aparece. Depois, identifique se falta um passo de processo, uma informação acessível ou encaminhamento à pessoa responsável.\n\nEssa distinção evita criar uma resposta única para situações que exigem avaliação diferente."
+    },
+    {
+      "codigo": "C04",
+      "data": "2026-10-14",
+      "hora": "12:30",
+      "etapa": "Autoridade",
+      "tema": "Uma conversa entre pares muda a pergunta",
+      "objetivo": "Conectar à visão HLS",
+      "cta": "Abrir carrossel, se link validado",
+      "formato": "Texto + link do post",
+      "execucao": "Admin HLS",
+      "aprovacao": "HLS e link, pendente",
+      "status": "A fazer",
+      "medicos": "Quando uma clínica depende do dono para toda decisão, a equipe perde tempo aguardando direção. O carrossel de hoje mostra por que a experiência de liderança do Dr. Rafael entrou nas conversas da HLS.\n\nAo ler, observe uma pergunta: qual decisão sua equipe já poderia conduzir com um critério definido?\n\nVer o carrossel: [LINK DO POST 14/10]",
+      "outras": "A experiência de quem lidera uma operação de saúde pode ajudar outras equipes a formular perguntas melhores sobre responsabilidade e processo.\n\nNo carrossel de hoje, Dr. Rafael apresenta parte dessa visão. Ao ler, pense em uma decisão que se repete na sua área e em quem precisa participar dela.\n\nVer o carrossel: [LINK DO POST 14/10]",
+      "alternativa": "Enviar somente as duas primeiras linhas de cada versão e encerrar com \"O carrossel está no perfil da HLS no Instagram.\" Usar apenas se o post estiver publicado e identificável."
+    },
+    {
+      "codigo": "C05",
+      "data": "2026-10-17",
+      "hora": "10:30",
+      "etapa": "Prática",
+      "tema": "Uma decisão precisa de critério",
+      "objetivo": "Aplicar liderança",
+      "cta": "Definir critério",
+      "formato": "Texto, sem peça",
+      "execucao": "Admin HLS",
+      "aprovacao": "HLS, pendente",
+      "status": "A fazer",
+      "medicos": "Ao distribuir uma decisão recorrente, combine três pontos com a equipe: em qual situação ela pode agir, qual informação precisa registrar e quando deve chamar o médico.\n\nUm limite claro protege a autonomia da equipe e mantém sob avaliação médica o que exige julgamento clínico.\n\nEscolha uma decisão operacional para descrever nesses três pontos.",
+      "outras": "Ao distribuir uma tarefa que sempre volta para a mesma pessoa, combine três pontos: quando a equipe pode agir, o que precisa registrar e em qual situação deve encaminhar o caso.\n\nO critério precisa respeitar as atribuições de cada profissão. Comece por uma tarefa administrativa recorrente e teste a clareza do combinado."
+    },
+    {
+      "codigo": "C06",
+      "data": "2026-10-21",
+      "hora": "12:30",
+      "etapa": "Curadoria",
+      "tema": "Antes de adotar uma tecnologia",
+      "objetivo": "Preparar tema do carrossel 22/10",
+      "cta": "Levar perguntas à equipe",
+      "formato": "Texto, sem peça",
+      "execucao": "Admin HLS",
+      "aprovacao": "Técnico, pendente",
+      "status": "A fazer",
+      "medicos": "Uma nova tecnologia pode parecer adequada até a equipe perguntar onde ela se encaixa na prática.\n\nAntes de avaliar a compra ou adoção, escreva: qual decisão ela ajudaria a tomar, que evidência sustenta o uso proposto e quais recursos a operação exigiria? A indicação e os limites clínicos precisam de revisão profissional específica.\n\nO Instagram da HLS terá um carrossel para aprofundar as próximas perguntas dessa análise.",
+      "outras": "Antes de levar uma tecnologia à rotina, vale definir o problema que ela pretende resolver.\n\nPergunte qual evidência existe, a quais atividades da sua profissão ela se aplica e que recursos a equipe precisaria para utilizá-la. As regras e os limites de atuação entram na avaliação desde o começo.\n\nO Instagram da HLS terá um carrossel para organizar essa conversa."
+    },
+    {
+      "codigo": "C07",
+      "data": "2026-10-24",
+      "hora": "10:30",
+      "etapa": "Escuta",
+      "tema": "Qual tema precisa de análise?",
+      "objetivo": "Coletar interesse real",
+      "cta": "Preencher formulário",
+      "formato": "Texto + link de formulário",
+      "execucao": "Admin HLS",
+      "aprovacao": "Formulário e HLS, bloqueado",
+      "status": "Bloqueado",
+      "medicos": "Queremos escolher os próximos temas a partir das decisões que médicos estão enfrentando agora.\n\nNeste formulário curto, indique uma questão de gestão ou atualização que mereça análise em um encontro da HLS. As respostas orientarão a seleção de pautas. Não inclua dados identificáveis de pacientes.\n\nRegistrar tema: [LINK FORMULÁRIO MÉDICOS]",
+      "outras": "A próxima pauta para outras especialidades da saúde precisa considerar as áreas que estão aqui.\n\nIndique no formulário sua profissão e uma questão de atualização ou organização do trabalho que valeria analisar na HLS. As respostas orientarão a seleção de conteúdos. Não inclua dados identificáveis de pacientes ou clientes.\n\nRegistrar tema: [LINK FORMULÁRIO OUTRAS ESPECIALIDADES]",
+      "alternativa": "Nesta semana, anote um tema profissional que mereça análise mais cuidadosa: uma decisão recorrente, uma novidade ou uma dúvida de processo. A equipe HLS está organizando os próximos conteúdos. Quando abrirmos o canal de escuta, vamos pedir sua contribuição com uma pergunta objetiva."
+    },
+    {
+      "codigo": "C08",
+      "data": "2026-10-28",
+      "hora": "12:30",
+      "etapa": "Indicação",
+      "tema": "Convide um profissional da sua área",
+      "objetivo": "Aquisição qualificada",
+      "cta": "Compartilhar página HLS",
+      "formato": "Texto + link rastreado",
+      "execucao": "Admin HLS",
+      "aprovacao": "LP/link, bloqueado",
+      "status": "Bloqueado",
+      "medicos": "Se um colega médico também está revendo processos da clínica ou avaliando novas soluções, a HLS pode ser um espaço útil para acompanhar essas conversas.\n\nCompartilhe a página de entrada com ele. O cadastro identifica a categoria profissional antes de encaminhar para a comunidade correta.\n\nPágina HLS: [LINK RASTREADO INDICAÇÃO MÉDICOS]",
+      "outras": "Conhece alguém da sua área que queira acompanhar conteúdos e conversas profissionais na HLS?\n\nEnvie a página de entrada. O cadastro permite identificar a profissão e direcionar a pessoa à comunidade adequada.\n\nPágina HLS: [LINK RASTREADO INDICAÇÃO OUTRAS ESPECIALIDADES]",
+      "alternativa": "Não enviar convite. Antecipar C09 para essa data e deixar 31/10 sem disparo. Não direcionar colegas para o link bruto de um grupo sem segmentação."
+    },
+    {
+      "codigo": "C09",
+      "data": "2026-10-31",
+      "hora": "10:30",
+      "etapa": "Continuidade",
+      "tema": "Uma revisão para novembro",
+      "objetivo": "Consolidar aplicação",
+      "cta": "Escolher rotina",
+      "formato": "Texto, sem peça",
+      "execucao": "Admin HLS",
+      "aprovacao": "HLS, pendente",
+      "status": "A fazer",
+      "medicos": "Em outubro, passamos por três pontos da rotina: informação antes da consulta, decisões que voltam ao médico e critérios para avaliar uma tecnologia.\n\nPara começar novembro, escolha um deles. Registre como a equipe trabalha hoje, qual dúvida se repete e quem participará da revisão.\n\nA próxima conversa fica mais útil quando começa por uma situação concreta.",
+      "outras": "Em outubro, examinamos a clareza do contato antes do atendimento, as dúvidas que voltam à equipe e as perguntas para avaliar uma tecnologia.\n\nEscolha uma dessas rotinas para revisar em novembro. Anote como funciona hoje, qual informação falta e quem precisa participar da mudança.\n\nUma situação concreta ajuda a definir a próxima conversa."
+    }
+  ],
+  "boasVindas": [
+    {
+      "codigo": "B01-M",
+      "publico": "Médicos",
+      "copy": "Bem-vindo à comunidade de médicos da HLS.\n\nAqui reunimos conteúdo, especialistas e experiências que ajudam a examinar decisões da prática e da gestão. A comunicação é feita pelos administradores; você pode acompanhar no seu ritmo.\n\nPara começar, observe uma decisão que voltou à sua mesa mais de uma vez nesta semana. Nas próximas mensagens, vamos trabalhar perguntas úteis para analisar situações como essa."
+    },
+    {
+      "codigo": "B01-O",
+      "publico": "Outras especialidades",
+      "copy": "Bem-vindo à comunidade HLS para outras especialidades da saúde.\n\nVocê encontrará conteúdos, especialistas e conversas sobre decisões profissionais. Cada aplicação deve respeitar a formação e as normas da sua área. A comunicação neste grupo é feita pelos administradores.\n\nPara começar, anote um tema de atualização ou de organização do trabalho que mereça uma análise mais cuidadosa. Vamos usar essas perguntas para orientar os próximos conteúdos."
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "CK-01",
+      "data": "2026-10-02",
+      "titulo": "Linha de base das comunidades",
+      "verificar": "Número atual de membros, permissões, link e origem; link da bio e identificação por CRM ou conselho.",
+      "decisao": "Corrigir a operação antes do primeiro envio.",
+      "canal": "Comunidades"
+    },
+    {
+      "id": "CK-02",
+      "data": "2026-10-10",
+      "titulo": "Primeiras três mensagens e bio",
+      "verificar": "Visualização e saídas dos três primeiros disparos; cliques da bio.",
+      "decisao": "Encurtar ou espaçar se houver fadiga; revisar a bio se ninguém chega à página.",
+      "canal": "Comunidades"
+    },
+    {
+      "id": "CK-03",
+      "data": "2026-10-16",
+      "titulo": "Checkpoint do feed e das entradas",
+      "verificar": "Temas e formatos por salvamentos, compartilhamentos e visitas ao perfil; entradas por origem e reação aos conteúdos de gestão.",
+      "decisao": "Ajustar o gancho do convite e a pauta sem aumentar disparos; revisar bio, página ou formulário conforme o ponto de queda.",
+      "canal": "Instagram e comunidades"
+    },
+    {
+      "id": "CK-04",
+      "data": "2026-10-24",
+      "titulo": "Formulário de escuta",
+      "verificar": "Formulário funcionando e volume de respostas por segmento.",
+      "decisao": "Com amostra pequena, tratar como sinal qualitativo e complementar com conversas autorizadas.",
+      "canal": "Comunidades"
+    },
+    {
+      "id": "CK-05",
+      "data": "2026-10-30",
+      "titulo": "Seleção de temas para novembro (Instagram)",
+      "verificar": "Perguntas e temas com melhor resposta no feed.",
+      "decisao": "Alimentar o calendário de novembro.",
+      "canal": "Instagram"
+    },
+    {
+      "id": "CK-06",
+      "data": "2026-10-31",
+      "titulo": "Fechamento de outubro",
+      "verificar": "Crescimento líquido, permanência, temas pedidos e origem das entradas.",
+      "decisao": "Selecionar a pauta de novembro e documentar o que reduzir ou repetir.",
+      "canal": "Comunidades"
+    }
+  ],
+  "geradoEm": "2026-10-02T13:20:09.357Z"
+}

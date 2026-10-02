@@ -1,0 +1,14 @@
+{
+  "name": "comunidades-hls",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Painel de status e planejamento estratégico da HLS — business club de saúde (Foco › Comunidade Saúde).",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/gerar-dados.mjs",
+    "dev": "node scripts/gerar-dados.mjs && node scripts/servidor.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

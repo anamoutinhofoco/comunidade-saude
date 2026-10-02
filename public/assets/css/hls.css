@@ -1,0 +1,29 @@
+/* HLS — componentes específicos deste painel (o resto vem do design system Foco e do app.css) */
+
+/* Funil da visão geral */
+.trilha-funil { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--e-2); counter-reset: funil; }
+.trilha-funil li { position: relative; display: grid; gap: 2px; padding: var(--e-3) var(--e-3) var(--e-3) var(--e-4); background: var(--superficie); border: 1px solid var(--linha); border-radius: var(--raio-md); font-weight: 600; color: var(--texto-forte); font-size: var(--t-14); counter-increment: funil; }
+.trilha-funil li::before { content: counter(funil, decimal-leading-zero); font-size: var(--t-12); font-weight: 400; color: var(--acento-texto); font-variant-numeric: tabular-nums; }
+.trilha-funil li:not(:last-child)::after { content: ''; position: absolute; right: -7px; top: 50%; width: 10px; height: 10px; border-top: 2px solid var(--linha); border-right: 2px solid var(--linha); transform: translateY(-50%) rotate(45deg); background: var(--fundo); z-index: 1; }
+@media (max-width: 900px) { .trilha-funil { grid-template-columns: repeat(2, minmax(0, 1fr)); } .trilha-funil li::after { display: none; } }
+
+/* Cartões de frente */
+.frente { display: grid; gap: var(--e-3); align-content: start; }
+.frente__topo { display: flex; align-items: center; justify-content: space-between; gap: var(--e-2); }
+.frente__nome { display: flex; align-items: center; gap: var(--e-2); font-weight: 600; color: var(--texto-forte); }
+.frente__nome .kpi__icone { flex: none; }
+.frente__bloco { display: grid; gap: 2px; font-size: var(--t-14); }
+.frente__bloco b { font-size: var(--t-12); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; color: var(--texto-suave); }
+
+/* Linha de marco passado / confirmar */
+.agenda__item--passou .agenda__data { opacity: 0.7; }
+
+/* Categorias da agenda */
+.ev--instagram { --ev: var(--cor-verde-600); --ev-t: #fff; }
+.ev--whatsapp { --ev: var(--cor-azul-600); --ev-t: #fff; }
+.ev--checkpoint { --ev: #6E4BB8; --ev-t: #fff; }
+.ev--marco { --ev: var(--cor-ambar-700); --ev-t: #fff; }
+:root[data-theme="dark"] .ev--instagram { --ev: #5CD39A; --ev-t: #06251A; }
+:root[data-theme="dark"] .ev--whatsapp { --ev: var(--cor-azul-400); --ev-t: var(--cor-navy-950); }
+:root[data-theme="dark"] .ev--checkpoint { --ev: #8E73D6; --ev-t: #120A2B; }
+:root[data-theme="dark"] .ev--marco { --ev: #E8B84A; --ev-t: #2A1D00; }
