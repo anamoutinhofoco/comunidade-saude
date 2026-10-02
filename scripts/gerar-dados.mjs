@@ -37,4 +37,4 @@ dados.geradoEm = new Date().toISOString();
 mkdirSync(join(raiz, 'public', 'dados'), { recursive: true });
 writeFileSync(join(raiz, 'public', 'dados', 'hls.json'), JSON.stringify(dados, null, 2) + '\n');
 console.log(`✓ dados/hls.json → public/dados/hls.json`);
-console.log(`  ${dados.frentes.length} frentes · ${dados.decisoes.length} decisões · ${dados.diagnostico.length} diagnósticos · ${dados.publicacoes.length} publicações · ${dados.disparos.length} disparos · ${dados.checkpoints.length} checkpoints`);
+console.log(`  ${dados.frentes.length} frentes · ${dados.decisoes.length} decisões · ${dados.publicacoes.length} publicações · ${dados.disparos.length} disparos · ${dados.checkpoints.length} checkpoints`);

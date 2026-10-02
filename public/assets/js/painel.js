@@ -93,7 +93,7 @@ function renderCabecalho() {
   $('#cabecalho-sub').textContent = D.resumo;
   const n = (valor, rotulo, extra = '') => `<div class="cabecalho__numero${extra}"><b>${valor}</b><span>${rotulo}</span></div>`;
   $('#cabecalho-numeros').innerHTML =
-    n(D.frentes.length, 'frentes acompanhadas') +
+    n(D.membros.medicos + D.membros.outras, `membros nas comunidades (${D.membros.medicos} médicos · ${D.membros.outras} outras especialidades)`) +
     n(D.publicacoes.length + D.disparos.length, 'publicações e disparos em outubro') +
     n(abertas.length, 'decisões em aberto');
 }
@@ -133,14 +133,6 @@ function renderDecisoes() {
     </div>`).join('');
 }
 
-// ---------- Diagnóstico ----------
-function renderDiagnostico() {
-  const alvo = $('#tabela-diagnostico');
-  alvo.innerHTML = tabela(['Frente', 'Diagnóstico', 'Resposta'], D.diagnostico.map((r) =>
-    `<tr><td class="col-tema">${esc(r.frente)}</td><td>${esc(r.diagnostico)}</td><td class="col-cta">${esc(r.acao)}</td></tr>`).join(''));
-  rotularCelulas(alvo);
-}
-
 // ---------- Operação ----------
 function renderOperacao() {
   const { fluxo, regras } = D.operacao;
@@ -159,7 +151,7 @@ function renderOperacao() {
 }
 
 // ---------- Abas ----------
-const NOMES_ABAS = ['visao-geral', 'agenda', 'mensagens', 'decisoes', 'diagnostico', 'operacao'];
+const NOMES_ABAS = ['visao-geral', 'agenda', 'mensagens', 'roteiros', 'decisoes', 'operacao'];
 
 function trocarAba(nome, { foco = false } = {}) {
   if (!NOMES_ABAS.includes(nome)) nome = 'visao-geral';
@@ -480,6 +472,16 @@ const blocoCopia = (rotulo, texto, chave) => {
   return `<div><span class="fase">${esc(rotulo)}</span><div class="detalhe__copy" style="margin-top: 8px">${comMarcadores(texto)}</div>
     <div class="detalhe__acoes"><button class="btn btn--secundario btn--p" type="button" data-copia="${esc(chave)}">${icone('i-copiar')}Copiar texto</button></div></div>`;
 };
+const detalhesVariacao = (titulo, corpo) => `<details style="margin-top: 4px"><summary style="cursor: pointer; font-weight: 600">${esc(titulo)}</summary><div style="display: grid; gap: 12px; margin-top: 12px">${corpo}</div></details>`;
+function htmlComplementos(x, pre) {
+  const enquete = x.enquete ? `<div><span class="fase">Enquete · publicar após a introdução (escolha única)</span>
+    <div class="grade grade--2" style="margin-top: 8px">${[['Médicos', x.enquete.medicos], ['Outras Especialidades', x.enquete.outras]].map(([r, q]) =>
+      `<div class="detalhe__copy"><b>${esc(r)}</b><br>${esc(q.pergunta)}<ol class="numerada" style="margin-top: 8px">${q.opcoes.map((o) => `<li><span>${esc(o)}</span></li>`).join('')}</ol></div>`).join('')}</div></div>` : '';
+  const variacoes = (x.variacoes ?? []).map((v, i) => detalhesVariacao(v.titulo,
+    blocoCopia('Versão M · Médicos', v.medicos, `${pre}:v${i}:m`) + blocoCopia('Versão O · Outras Especialidades', v.outras, `${pre}:v${i}:o`))).join('');
+  const notas = (x.notas ?? []).map((t) => `<div class="aviso">${icone('i-info')}<div>${esc(t)}</div></div>`).join('');
+  return enquete + variacoes + notas;
+}
 function htmlEvento(e) {
   const x = e.item;
   const d = paraData(e.data);
@@ -495,10 +497,10 @@ function htmlEvento(e) {
       ${blocoCopia('Legenda pronta', x.legenda, e.id)}`;
   } else if (e.cat === 'whatsapp') {
     corpo = `
-      <dl class="detalhe__dados dialogo__dados">${campo('Etapa', x.etapa)}${campo('Objetivo', x.objetivo)}${campo('CTA', x.cta)}${campo('Formato', x.formato)}${campo('Execução', x.execucao)}${campo('Status', x.aprovacao)}</dl>
+      <dl class="detalhe__dados dialogo__dados">${campo('Etapa', x.etapa)}${campo('Objetivo', x.objetivo)}${campo('CTA', x.cta)}${campo('Formato', x.formato)}${campo('Execução', x.execucao)}${campo('Status', x.aprovacao)}${campo('Medição', x.medicao)}</dl>
       ${blocoCopia('Versão M · comunidade de Médicos', x.medicos, `${e.id}:m`)}
       ${blocoCopia('Versão O · comunidade de Outras Especialidades', x.outras, `${e.id}:o`)}
-      ${x.alternativa ? `<div class="aviso aviso--atencao">${icone('i-alerta')}<div><strong>Alternativa sem link validado</strong>${comMarcadores(x.alternativa)}</div></div>` : ''}
+      ${htmlComplementos(x, e.id)}
       ${/\[LINK/.test(x.medicos + x.outras) ? `<div class="aviso">${icone('i-info')}<div><strong>Campos entre colchetes</strong>Os trechos entre colchetes só são enviados depois que o link for substituído e testado.</div></div>` : ''}`;
   } else if (e.cat === 'checkpoint') {
     corpo = `<dl class="detalhe__dados dialogo__dados">${campo('Canal', x.canal)}${campo('O que verificar', x.verificar)}${campo('Se abaixo do esperado', x.decisao)}</dl>`;
@@ -565,7 +567,7 @@ dialogoAg.addEventListener('click', async (e) => {
 function renderMensagens() {
   const boasVindas = (D.boasVindas ?? []).map((b) => `
     <article class="cartao">
-      <span class="fase">${esc(b.publico)} · enviada na entrada de cada membro</span>
+      <span class="fase">${esc(b.publico)} · ${esc(b.nota ?? 'enviada na entrada de cada membro')}</span>
       <h3 class="f-titulo-3" style="margin: 4px 0 12px">${esc(b.codigo)} · Boas-vindas</h3>
       ${blocoCopia('Mensagem', b.copy, `msg:${b.codigo}`)}
     </article>`).join('');
@@ -574,34 +576,79 @@ function renderMensagens() {
     return `<article class="cartao">
       <span class="fase">${DIAS_LONGOS[d.getDay()]}, ${ddmm(x.data)}${x.hora ? ` · ${esc(x.hora)}` : ''} · ${esc(x.etapa)}</span>
       <h3 class="f-titulo-3" style="margin: 4px 0 8px">${esc(x.codigo)} · ${esc(x.tema)}</h3>
-      <dl class="detalhe__dados dialogo__dados">${campo('Objetivo', x.objetivo)}${campo('CTA', x.cta)}${campo('Formato', x.formato)}${campo('Execução', x.execucao)}${campo('Status', x.aprovacao)}</dl>
+      <dl class="detalhe__dados dialogo__dados">${campo('Objetivo', x.objetivo)}${campo('CTA', x.cta)}${campo('Formato', x.formato)}${campo('Execução', x.execucao)}${campo('Status', x.aprovacao)}${campo('Medição', x.medicao)}</dl>
       <div class="grade grade--2" style="margin-top: 12px">
         ${blocoCopia('Versão M · Médicos', x.medicos, `msg:${x.codigo}:m`)}
         ${blocoCopia('Versão O · Outras Especialidades', x.outras, `msg:${x.codigo}:o`)}
       </div>
-      ${x.alternativa ? `<div class="aviso aviso--atencao" style="margin-top: 12px">${icone('i-alerta')}<div><strong>Alternativa sem link validado</strong>${comMarcadores(x.alternativa)}</div></div>` : ''}
+      <div style="display: grid; gap: 12px; margin-top: 12px">${htmlComplementos(x, `msg:${x.codigo}`)}</div>
     </article>`;
   }).join('');
+  const R = D.resultadosEnquetes;
+  const resultados = R ? `<div class="secao"><div class="secao__cabeca"><div><span class="rotulo">resultados</span><h3 class="f-titulo-3">Como usar os resultados das enquetes</h3><p class="f-legenda">${esc(R.regra)}</p></div></div>
+    <div style="display: grid; gap: 16px">${R.itens.map((it, i) => `<article class="cartao"><span class="fase">${esc(it.de)} → ${esc(it.para)} · ${ddmm(it.data)}</span><p class="f-legenda" style="margin: 4px 0 12px">${esc(it.regra)}</p>
+      <div style="display: grid; gap: 12px">${it.opcoes.map((o, j) => blocoCopia(o.rotulo, o.texto, `res:${i}:${j}`)).join('')}</div></article>`).join('')}</div></div>` : '';
   $('#lista-mensagens').innerHTML = `
     <div class="secao"><div class="secao__cabeca"><div><span class="rotulo">entrada</span><h3 class="f-titulo-3">Boas-vindas</h3></div></div><div class="grade grade--2">${boasVindas}</div></div>
-    <div class="secao"><div class="secao__cabeca"><div><span class="rotulo">outubro</span><h3 class="f-titulo-3">Disparos (${D.disparos.length})</h3></div></div><div style="display: grid; gap: 16px">${disparos}</div></div>`;
+    <div class="secao"><div class="secao__cabeca"><div><span class="rotulo">outubro</span><h3 class="f-titulo-3">Disparos (${D.disparos.length})</h3></div></div><div style="display: grid; gap: 16px">${disparos}</div></div>
+    ${resultados}`;
 }
-$('#lista-mensagens').addEventListener('click', async (e) => {
+// ---------- Roteiros ----------
+const dh = (v) => (v ? `${v.slice(8, 10)}/${v.slice(5, 7)} · ${v.slice(11)}` : '—');
+function renderRoteiros() {
+  const R = D.roteiros;
+  const O = R.orientacoes;
+  const orient = `<article class="cartao" style="display: grid; gap: 12px">
+    <h3 class="f-titulo-3">Como pedir e receber</h3>
+    <p class="f-corpo">${esc(O.lotes)}</p>
+    <ul class="lista-seta">${[...O.captacao, O.prioridade, O.encaixe].map((t) => `<li>${icone('i-check')}<span>${esc(t)}</span></li>`).join('')}</ul>
+  </article>`;
+  const tempo = (v) => v ? `<div><dt>${v[0]}</dt><dd>${esc(v[1])}</dd></div>` : '';
+  const cards = R.itens.map((g) => {
+    const texto = g.roteiro.join('\n\n');
+    return `<article class="cartao" style="display: grid; gap: 14px">
+      <div><span class="fase">${esc(g.id)} · ${esc(g.quem)} · ${esc(g.formato)} · Prioridade ${g.prioridade}</span>
+      <h3 class="f-titulo-3" style="margin-top: 4px">${esc(g.titulo)}</h3>
+      <p class="f-legenda" style="margin-top: 4px">${esc(g.objetivo)} Encaixe: ${esc(g.encaixe)}</p></div>
+      <dl class="detalhe__dados dialogo__dados">${campo('Captar', dh(g.captar))}${campo('Enviar até', dh(g.enviarAte))}${campo('Publicar', dh(g.publicar))}${campo('Canal', g.canal)}</dl>
+      <div><span class="fase">Roteiro final para leitura</span><ol class="numerada" style="margin-top: 8px">${g.roteiro.map((l) => `<li><span>${esc(l)}</span></li>`).join('')}</ol>
+        <div class="detalhe__acoes"><button class="btn btn--secundario btn--p" type="button" data-copia="rot:${esc(g.id)}">${icone('i-copiar')}Copiar roteiro</button></div></div>
+      ${g.captacao ? `<dl class="detalhe__dados">${campo('Captação e edição', g.captacao)}</dl>` : ''}
+      ${g.capa ? `<dl class="detalhe__dados">${campo('Capa', g.capa)}</dl>` : ''}
+      ${g.legendaInstagram ? blocoCopia('Legenda Instagram', g.legendaInstagram, `leg:${g.id}`) : ''}
+      <div class="grade grade--2">
+        ${blocoCopia('Apoio WhatsApp · Médicos', g.apoioMedicos, `apm:${g.id}`)}
+        ${blocoCopia('Apoio WhatsApp · Outras áreas', g.apoioOutras, `apo:${g.id}`)}
+      </div>
+      <dl class="detalhe__dados">${campo('Uso e reaproveitamento', g.uso)}</dl>
+    </article>`;
+  }).join('');
+  const apoio = `<div class="secao"><div class="secao__cabeca"><div><span class="rotulo">apoio</span><h3 class="f-titulo-3">Imagens e materiais de apoio</h3><p class="f-legenda">Pedidos opcionais que acompanham as gravações. Nenhum deles atrasa uma peça: cada um tem alternativa.</p></div></div>
+    <div class="grade grade--3">${R.apoio.map((m) => `<article class="cartao" style="display: grid; gap: 8px"><span class="fase">${esc(m.id)}</span><h4 class="f-titulo-3">${esc(m.titulo)}</h4><p class="f-corpo">${esc(m.instrucao)}</p><p class="f-legenda"><b>Alternativa:</b> ${esc(m.alternativa)}</p></article>`).join('')}</div>
+    <div class="aviso">${icone('i-info')}<div><strong>Modelo de tabela para G06, preparado pela FOCO</strong>${esc(O.modeloTabela)}</div></div></div>`;
+  $('#lista-roteiros').innerHTML = `<div style="display: grid; gap: 24px">${orient}
+    <div class="secao"><div class="secao__cabeca"><div><span class="rotulo">gravações</span><h3 class="f-titulo-3">Roteiros (${R.itens.length})</h3></div></div><div style="display: grid; gap: 16px">${cards}</div></div>
+    ${apoio}</div>`;
+  for (const g of R.itens) copias.set(`rot:${g.id}`, g.roteiro.join('\n\n'));
+}
+async function copiarDoPainel(e) {
   const c = e.target.closest('[data-copia]');
   if (!c) return;
   try { await navigator.clipboard.writeText(copias.get(c.dataset.copia)); toast('Texto copiado'); }
   catch { toast('Não foi possível copiar — selecione o texto manualmente'); }
-});
+}
+$('#lista-mensagens').addEventListener('click', copiarDoPainel);
+$('#lista-roteiros').addEventListener('click', copiarDoPainel);
 
 // ---------- Montagem ----------
 renderCabecalho();
 renderFunil();
 renderFrentes();
 renderDecisoes();
-renderDiagnostico();
 renderOperacao();
 renderAgenda();
 renderMensagens();
+renderRoteiros();
 atualizarContadores();
 
 $('#rodape-fonte').textContent = `Atualizado em ${D.atualizadoEm.split('-').reverse().join('/')} · dados/hls.json`;
