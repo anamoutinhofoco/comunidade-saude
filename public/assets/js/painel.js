@@ -111,6 +111,7 @@ function renderFrentes() {
       </div>
       <div><span class="tag tag--status tag--${esc(f.tom)}">${esc(f.situacao)}</span></div>
       <div class="frente__bloco"><b>Situação</b><span>${esc(f.estado)}</span></div>
+      ${f.responsavel ? `<div class="frente__bloco"><b>Responsável</b><span>${esc(f.responsavel)}</span></div>` : ''}
       <div class="frente__bloco"><b>Próximo passo</b><span>${esc(f.proximo)}</span></div>
     </article>`).join('');
 }
@@ -392,7 +393,7 @@ function htmlMes() {
 function subPauta(e) {
   const x = e.item;
   if (e.cat === 'instagram') return `${esc(x.formato)} · ${esc(x.tema)}<br>CTA: <b>${esc(x.cta)}</b>`;
-  if (e.cat === 'whatsapp') return `${esc(x.etapa)} · Médicos e Outras Especialidades · ${esc(x.formato)}<br>CTA: <b>${esc(x.cta)}</b> · Aprovação: ${esc(x.aprovacao)}`;
+  if (e.cat === 'whatsapp') return `${esc(x.etapa)} · Médicos e Outras Especialidades · ${esc(x.formato)}<br>CTA: <b>${esc(x.cta)}</b>${x.aprovacao ? ` · Status: ${esc(x.aprovacao)}` : ''}`;
   if (e.cat === 'checkpoint') return `${esc(x.verificar)}<br>Se abaixo do esperado: ${esc(x.decisao)}`;
   return `${esc(x.impacto)}<br>${esc(x.tipo)} · ${esc(x.responsavel)}`;
 }
@@ -494,7 +495,7 @@ function htmlEvento(e) {
       ${blocoCopia('Legenda pronta', x.legenda, e.id)}`;
   } else if (e.cat === 'whatsapp') {
     corpo = `
-      <dl class="detalhe__dados dialogo__dados">${campo('Etapa', x.etapa)}${campo('Objetivo', x.objetivo)}${campo('CTA', x.cta)}${campo('Formato', x.formato)}${campo('Execução', x.execucao)}${campo('Aprovação', x.aprovacao)}</dl>
+      <dl class="detalhe__dados dialogo__dados">${campo('Etapa', x.etapa)}${campo('Objetivo', x.objetivo)}${campo('CTA', x.cta)}${campo('Formato', x.formato)}${campo('Execução', x.execucao)}${campo('Status', x.aprovacao)}</dl>
       ${blocoCopia('Versão M · comunidade de Médicos', x.medicos, `${e.id}:m`)}
       ${blocoCopia('Versão O · comunidade de Outras Especialidades', x.outras, `${e.id}:o`)}
       ${x.alternativa ? `<div class="aviso aviso--atencao">${icone('i-alerta')}<div><strong>Alternativa sem link validado</strong>${comMarcadores(x.alternativa)}</div></div>` : ''}

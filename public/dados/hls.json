@@ -18,8 +18,9 @@
       "icone": "i-pessoas",
       "situacao": "Aguardando validação",
       "tom": "ajuste",
-      "estado": "Sequência de outubro escrita: 9 disparos por comunidade (Médicos e Outras Especialidades), de 03 a 31/10. Não está pronta para agendar até haver publicador, aprovação HLS, linha de base e links testados.",
-      "proximo": "Nomear publicador e aprovador, medir as comunidades, testar página de entrada e formulário e liberar os disparos por lote."
+      "estado": "Sequência de outubro escrita: 9 disparos por comunidade (Médicos e Outras Especialidades), de 03 a 31/10. Canais oficiais de envio definidos. Faltam registrar a linha de base e testar o formulário de escuta.",
+      "proximo": "Hamilton (FOCO) é o responsável pelos disparos e pela automação: medir as comunidades, testar o formulário e liberar os disparos por lote.",
+      "responsavel": "Hamilton"
     },
     {
       "id": "instagram",
@@ -31,22 +32,13 @@
       "proximo": "Fechar link da bio, produzir os estáticos em dois lotes, criar o carrossel de 22/10 e seguir o fluxo de aprovação."
     },
     {
-      "id": "networking",
-      "nome": "Poder do Network Doctors",
-      "icone": "i-conversa",
-      "situacao": "Prioridade",
-      "tom": "atrasado",
-      "estado": "Frente de networking tratada como urgente, com mensagens solicitadas.",
-      "proximo": "Mostrar valor em conexões, acesso, relacionamento e oportunidades entre profissionais da saúde, não só em conteúdo."
-    },
-    {
       "id": "aquisicao",
       "nome": "Aquisição e divulgação",
       "icone": "i-megafone",
       "situacao": "A validar",
       "tom": "neutro",
-      "estado": "Em outubro a aquisição é orgânica: Instagram, WhatsApp e indicação entre pares, sem mídia paga. Falta validar a página de entrada e a origem das entradas.",
-      "proximo": "Validar volume de tráfego e acompanhar a origem das entradas."
+      "estado": "Em outubro a aquisição é orgânica: Instagram, WhatsApp e indicação entre pares, sem mídia paga. A página de entrada (LP) já está validada e foi usada no tráfego: https://lp.agenciafocomkt.com.br/comunidade-hls",
+      "proximo": "Acompanhar a origem das entradas pela LP e o volume de tráfego."
     },
     {
       "id": "identidade",
@@ -71,7 +63,7 @@
     {
       "id": "DC-01",
       "tipo": "Operação",
-      "decisao": "Quem, do lado da HLS, fornece os insumos e aprova as comunicações",
+      "decisao": "Quem, do lado da HLS, fornece os insumos",
       "impacto": "Sem um responsável único, conteúdos acumulam em aprovação.",
       "responsavel": "HLS",
       "prazo": null,
@@ -114,40 +106,22 @@
       "status": "Aberta"
     },
     {
-      "id": "DC-08",
-      "tipo": "Bloqueador",
-      "decisao": "Nomear o publicador (administrador com acesso) e confirmar o número ou canal oficial de envio",
-      "impacto": "Sem publicador não há como agendar nenhum disparo das comunidades.",
-      "responsavel": "HLS",
-      "prazo": "2026-10-02",
-      "status": "Aberta"
-    },
-    {
       "id": "DC-09",
       "tipo": "Bloqueador",
-      "decisao": "Registrar a linha de base atual de membros e testar o link da bio e a identificação por CRM ou conselho",
+      "decisao": "Registrar a linha de base atual de membros e testar o link da bio",
       "impacto": "Os valores de julho e os status de setembro não substituem a medição de hoje; a bio precisa levar à comunidade certa antes da primeira publicação.",
       "responsavel": "FOCO + HLS",
       "prazo": "2026-10-02",
       "status": "Aberta"
     },
     {
-      "id": "DC-10",
-      "tipo": "Aprovação",
-      "decisao": "Aprovação HLS das mensagens e revisão técnica de qualquer conteúdo clínico, até dois dias antes de cada envio",
-      "impacto": "Os disparos podem ser liberados por lote depois dessa aprovação.",
-      "responsavel": "HLS + Dr. Rafael ou profissional indicado",
-      "prazo": null,
-      "status": "Aberta"
-    },
-    {
       "id": "DC-11",
       "tipo": "Dependência",
-      "decisao": "Nomear o analista de métricas e o responsável por respostas e atendimento",
+      "decisao": "Analista de métricas e responsável por respostas e atendimento: Hamilton",
       "impacto": "Métricas dependem de relatórios em 02, 16 e 31/10; respostas externas passam a ser diárias após formulário e convite.",
-      "responsavel": "HLS + FOCO",
+      "responsavel": "Hamilton (FOCO)",
       "prazo": "2026-10-02",
-      "status": "Aberta"
+      "status": "Confirmado"
     },
     {
       "id": "DC-12",
@@ -161,9 +135,9 @@
     {
       "id": "DC-13",
       "tipo": "Dependência",
-      "decisao": "Testar a página de entrada com segmentação e links rastreados (disparo C08 de 28/10)",
-      "impacto": "Sem página validada, o convite de indicação não é enviado; C09 é antecipada.",
-      "responsavel": "Responsável digital HLS/FOCO",
+      "decisao": "Gerar e testar os links rastreados da LP validada (disparo C08 de 28/10)",
+      "impacto": "Sem links rastreados não há origem das indicações; sem eles, o convite não é enviado e C09 é antecipada.",
+      "responsavel": "Hamilton (FOCO)",
       "prazo": "2026-10-27",
       "status": "Aberta"
     },
@@ -202,11 +176,6 @@
       "frente": "Insumos",
       "diagnostico": "Falta de calendário e de materiais antecipados",
       "acao": "Pasta central de ativos e prazo mínimo para envio de materiais"
-    },
-    {
-      "frente": "Aprovação",
-      "diagnostico": "Dependência de retorno do cliente e dos parceiros",
-      "acao": "Responsável de aprovação definido e prazo mínimo de retorno"
     },
     {
       "frente": "Instagram",
@@ -502,8 +471,7 @@
       "objetivo": "Primeiro valor e contexto",
       "cta": "Observar rotina",
       "formato": "Texto, sem peça",
-      "execucao": "Admin HLS",
-      "aprovacao": "HLS, pendente",
+      "execucao": "Hamilton (FOCO)",
       "status": "A fazer",
       "medicos": "Uma decisão chega ao médico pela segunda ou terceira vez na mesma semana. Antes de respondê-la novamente, vale registrar: qual informação faltou, quem precisava dela e em que momento a dúvida apareceu?\n\nEsse pequeno registro mostra se a equipe precisa de um critério compartilhado, de uma orientação mais clara ou de uma conversa sobre o processo.\n\nEscolha uma decisão recorrente para observar nos próximos dias.",
       "outras": "Há dúvidas que voltam à rotina porque a informação ficou espalhada entre pessoas e canais.\n\nNa próxima vez que isso acontecer, anote qual informação faltou, quem precisava dela e quando a dúvida surgiu. O registro ajuda a equipe a revisar a comunicação ou o processo dentro das responsabilidades de cada profissional.\n\nEscolha uma dúvida recorrente para observar nesta semana."
@@ -517,8 +485,8 @@
       "objetivo": "Aplicar tema do feed",
       "cta": "Revisar mensagem",
       "formato": "Texto, sem peça",
-      "execucao": "Admin HLS",
-      "aprovacao": "HLS e técnico, pendente",
+      "execucao": "Hamilton (FOCO)",
+      "aprovacao": "Revisão técnica, pendente",
       "status": "A fazer",
       "medicos": "Antes da consulta, o paciente precisa encontrar informações básicas sem montar um quebra-cabeça de mensagens.\n\nPegue a confirmação que sua clínica usa hoje. Ela informa horário, endereço, orientações pertinentes e um canal para dúvidas? Se houver preparo específico, confirme o texto com o responsável técnico.\n\nUma revisão de cinco minutos pode revelar onde a jornada está pouco clara.",
       "outras": "O contato anterior ao atendimento já cria uma expectativa sobre como a pessoa será recebida.\n\nRevise a mensagem enviada hoje: horário, local, orientações pertinentes à sua área e canal para dúvidas estão claros? Qualquer instrução técnica deve ser conferida pelo profissional responsável.\n\nEscolha um trecho que costuma gerar pergunta e ajuste a redação com a equipe."
@@ -532,8 +500,7 @@
       "objetivo": "Identificar decisão recorrente",
       "cta": "Registrar pergunta",
       "formato": "Texto, sem peça",
-      "execucao": "Admin HLS",
-      "aprovacao": "HLS, pendente",
+      "execucao": "Hamilton (FOCO)",
       "status": "A fazer",
       "medicos": "Qual pergunta a equipe leva ao médico repetidamente?\n\nAnote a pergunta exata antes de criar uma resposta padrão. Depois, verifique se os casos têm o mesmo contexto e quais decisões exigem avaliação médica individual.\n\nO objetivo é separar o que pode virar orientação de processo daquilo que precisa permanecer sob decisão profissional.",
       "outras": "Qual dúvida volta com frequência na sua equipe?\n\nRegistre a pergunta como ela aparece. Depois, identifique se falta um passo de processo, uma informação acessível ou encaminhamento à pessoa responsável.\n\nEssa distinção evita criar uma resposta única para situações que exigem avaliação diferente."
@@ -547,8 +514,8 @@
       "objetivo": "Conectar à visão HLS",
       "cta": "Abrir carrossel, se link validado",
       "formato": "Texto + link do post",
-      "execucao": "Admin HLS",
-      "aprovacao": "HLS e link, pendente",
+      "execucao": "Hamilton (FOCO)",
+      "aprovacao": "Link, pendente",
       "status": "A fazer",
       "medicos": "Quando uma clínica depende do dono para toda decisão, a equipe perde tempo aguardando direção. O carrossel de hoje mostra por que a experiência de liderança do Dr. Rafael entrou nas conversas da HLS.\n\nAo ler, observe uma pergunta: qual decisão sua equipe já poderia conduzir com um critério definido?\n\nVer o carrossel: [LINK DO POST 14/10]",
       "outras": "A experiência de quem lidera uma operação de saúde pode ajudar outras equipes a formular perguntas melhores sobre responsabilidade e processo.\n\nNo carrossel de hoje, Dr. Rafael apresenta parte dessa visão. Ao ler, pense em uma decisão que se repete na sua área e em quem precisa participar dela.\n\nVer o carrossel: [LINK DO POST 14/10]",
@@ -563,8 +530,7 @@
       "objetivo": "Aplicar liderança",
       "cta": "Definir critério",
       "formato": "Texto, sem peça",
-      "execucao": "Admin HLS",
-      "aprovacao": "HLS, pendente",
+      "execucao": "Hamilton (FOCO)",
       "status": "A fazer",
       "medicos": "Ao distribuir uma decisão recorrente, combine três pontos com a equipe: em qual situação ela pode agir, qual informação precisa registrar e quando deve chamar o médico.\n\nUm limite claro protege a autonomia da equipe e mantém sob avaliação médica o que exige julgamento clínico.\n\nEscolha uma decisão operacional para descrever nesses três pontos.",
       "outras": "Ao distribuir uma tarefa que sempre volta para a mesma pessoa, combine três pontos: quando a equipe pode agir, o que precisa registrar e em qual situação deve encaminhar o caso.\n\nO critério precisa respeitar as atribuições de cada profissão. Comece por uma tarefa administrativa recorrente e teste a clareza do combinado."
@@ -578,8 +544,8 @@
       "objetivo": "Preparar tema do carrossel 22/10",
       "cta": "Levar perguntas à equipe",
       "formato": "Texto, sem peça",
-      "execucao": "Admin HLS",
-      "aprovacao": "Técnico, pendente",
+      "execucao": "Hamilton (FOCO)",
+      "aprovacao": "Revisão técnica, pendente",
       "status": "A fazer",
       "medicos": "Uma nova tecnologia pode parecer adequada até a equipe perguntar onde ela se encaixa na prática.\n\nAntes de avaliar a compra ou adoção, escreva: qual decisão ela ajudaria a tomar, que evidência sustenta o uso proposto e quais recursos a operação exigiria? A indicação e os limites clínicos precisam de revisão profissional específica.\n\nO Instagram da HLS terá um carrossel para aprofundar as próximas perguntas dessa análise.",
       "outras": "Antes de levar uma tecnologia à rotina, vale definir o problema que ela pretende resolver.\n\nPergunte qual evidência existe, a quais atividades da sua profissão ela se aplica e que recursos a equipe precisaria para utilizá-la. As regras e os limites de atuação entram na avaliação desde o começo.\n\nO Instagram da HLS terá um carrossel para organizar essa conversa."
@@ -593,8 +559,8 @@
       "objetivo": "Coletar interesse real",
       "cta": "Preencher formulário",
       "formato": "Texto + link de formulário",
-      "execucao": "Admin HLS",
-      "aprovacao": "Formulário e HLS, bloqueado",
+      "execucao": "Hamilton (FOCO)",
+      "aprovacao": "Formulário, bloqueado",
       "status": "Bloqueado",
       "medicos": "Queremos escolher os próximos temas a partir das decisões que médicos estão enfrentando agora.\n\nNeste formulário curto, indique uma questão de gestão ou atualização que mereça análise em um encontro da HLS. As respostas orientarão a seleção de pautas. Não inclua dados identificáveis de pacientes.\n\nRegistrar tema: [LINK FORMULÁRIO MÉDICOS]",
       "outras": "A próxima pauta para outras especialidades da saúde precisa considerar as áreas que estão aqui.\n\nIndique no formulário sua profissão e uma questão de atualização ou organização do trabalho que valeria analisar na HLS. As respostas orientarão a seleção de conteúdos. Não inclua dados identificáveis de pacientes ou clientes.\n\nRegistrar tema: [LINK FORMULÁRIO OUTRAS ESPECIALIDADES]",
@@ -609,8 +575,8 @@
       "objetivo": "Aquisição qualificada",
       "cta": "Compartilhar página HLS",
       "formato": "Texto + link rastreado",
-      "execucao": "Admin HLS",
-      "aprovacao": "LP/link, bloqueado",
+      "execucao": "Hamilton (FOCO)",
+      "aprovacao": "Link rastreado, pendente",
       "status": "Bloqueado",
       "medicos": "Se um colega médico também está revendo processos da clínica ou avaliando novas soluções, a HLS pode ser um espaço útil para acompanhar essas conversas.\n\nCompartilhe a página de entrada com ele. O cadastro identifica a categoria profissional antes de encaminhar para a comunidade correta.\n\nPágina HLS: [LINK RASTREADO INDICAÇÃO MÉDICOS]",
       "outras": "Conhece alguém da sua área que queira acompanhar conteúdos e conversas profissionais na HLS?\n\nEnvie a página de entrada. O cadastro permite identificar a profissão e direcionar a pessoa à comunidade adequada.\n\nPágina HLS: [LINK RASTREADO INDICAÇÃO OUTRAS ESPECIALIDADES]",
@@ -625,8 +591,7 @@
       "objetivo": "Consolidar aplicação",
       "cta": "Escolher rotina",
       "formato": "Texto, sem peça",
-      "execucao": "Admin HLS",
-      "aprovacao": "HLS, pendente",
+      "execucao": "Hamilton (FOCO)",
       "status": "A fazer",
       "medicos": "Em outubro, passamos por três pontos da rotina: informação antes da consulta, decisões que voltam ao médico e critérios para avaliar uma tecnologia.\n\nPara começar novembro, escolha um deles. Registre como a equipe trabalha hoje, qual dúvida se repete e quem participará da revisão.\n\nA próxima conversa fica mais útil quando começa por uma situação concreta.",
       "outras": "Em outubro, examinamos a clareza do contato antes do atendimento, as dúvidas que voltam à equipe e as perguntas para avaliar uma tecnologia.\n\nEscolha uma dessas rotinas para revisar em novembro. Anote como funciona hoje, qual informação falta e quem precisa participar da mudança.\n\nUma situação concreta ajuda a definir a próxima conversa."
@@ -649,7 +614,7 @@
       "id": "CK-01",
       "data": "2026-10-02",
       "titulo": "Linha de base das comunidades",
-      "verificar": "Número atual de membros, permissões, link e origem; link da bio e identificação por CRM ou conselho.",
+      "verificar": "Número atual de membros, permissões, link e origem; link da bio.",
       "decisao": "Corrigir a operação antes do primeiro envio.",
       "canal": "Comunidades"
     },
@@ -694,5 +659,5 @@
       "canal": "Comunidades"
     }
   ],
-  "geradoEm": "2026-10-02T18:45:02.295Z"
+  "geradoEm": "2026-10-02T19:03:49.475Z"
 }
